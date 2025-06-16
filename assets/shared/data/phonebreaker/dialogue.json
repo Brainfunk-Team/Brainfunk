@@ -1,0 +1,52 @@
+{
+	"dialogue": [
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "angry",
+			"expression": "angey",
+			"text": "HOW COULD YOU DO THIS TO ME?!?!?!?!"
+		},
+		{
+			"sound": "bf_dialogue",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Bep?"
+		},
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "angry",
+			"expression": "angey",
+			"text": "YOU BREAK MY PHONE!!!!!!!!!!"
+		},
+		{
+			"sound": "gf_dialogue",
+			"speed": 0.05,
+			"portrait": "vsdavegf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "No, we didn't. You broke it."
+		},
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "angry",
+			"expression": "angey",
+			"text": "FOR BREAKING MY PHONE, I WILL BREAK YOU!!!!!!!!!!!!!!"
+		},
+		{
+			"sound": "bf_dialogue",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Skabeep ba!"
+		}
+	]
+}

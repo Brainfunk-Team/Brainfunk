@@ -1,0 +1,53 @@
+local jumpscareTriggered = false
+
+function onStepHit()
+    if curStep == 1712 and not botPlay and not practiceMode and not jumpscareTriggered then
+        jumpscareTriggered = true
+
+        -- Play jumpscare sound
+        playSound('jumpscareSound')
+
+        -- Show jumpscare image fullscreen
+        makeLuaSprite('jumpscare', 'jumpscareImage', 0, 0)
+        setObjectCamera('jumpscare', 'hud')
+        addLuaSprite('jumpscare', true)
+
+        -- After short delay, start fade to black
+        runTimer('startFadeToBlack', 0.7)
+    end
+end
+
+function onTimerCompleted(tag)
+    if tag == 'startFadeToBlack' then
+        -- Fade out jumpscare image
+        doTweenAlpha('fadeOutJumpscare', 'jumpscare', 0, 0.5)
+
+        -- Create black overlay (starts invisible)
+        makeLuaSprite('blackOverlay', '', 0, 0)
+        makeGraphic('blackOverlay', screenWidth, screenHeight, '000000')
+        setObjectCamera('blackOverlay', 'hud')
+        addLuaSprite('blackOverlay', true)
+        setProperty('blackOverlay.alpha', 0)
+
+        -- Fade to black
+        doTweenAlpha('fadeInBlack', 'blackOverlay', 1, 1)
+
+        -- Play creepy ambient sound (looped)
+        playSound('creepyAmbience', 1, true)
+
+        -- After black is full, show file path
+        runTimer('showFilePath', 2)
+    elseif tag == 'showFilePath' then
+        -- Display file path
+        makeLuaText('filePathText', "Check this file:\nmods/data/Delmurgium/LOGS.txt", 600, screenWidth / 2 - 300, screenHeight / 2 - 50)
+        setTextSize('filePathText', 28)
+        setTextColor('filePathText', 'FFFFFF')
+        setTextAlignment('filePathText', 'center')
+        setObjectCamera('filePathText', 'hud')
+        addLuaText('filePathText')
+        setProperty('filePathText.alpha', 0)
+        doTweenAlpha('fadeInText', 'filePathText', 1, 1)
+    elseif tag == 'fadeOutJumpscare' then
+        removeLuaSprite('jumpscare', true)
+    end
+end

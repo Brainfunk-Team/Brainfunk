@@ -1,0 +1,28 @@
+{
+	"dialogue": [
+		{
+			"expression": "confused",
+			"text": "Uhhhhh...\\nI don't feel so good...",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"expression": "confused",
+			"text": "Bap?",
+			"boxState": "normal",
+			"sound": "bf_dialogue",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "Oh, no...",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.1,
+			"portrait": "dave"
+		}
+	]
+}

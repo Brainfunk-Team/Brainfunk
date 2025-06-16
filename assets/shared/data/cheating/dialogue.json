@@ -1,0 +1,52 @@
+{
+	"dialogue": [
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "cheating",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "WHY YOU CHEAT????????"
+		},
+		{
+			"sound": "gf_dialogue",
+			"speed": 0.05,
+			"portrait": "vsdavegf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Are you Bambi? You kind of look like him. But 3D, like with Dave."
+		},
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "cheating",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "I merely took his form. I felt it suiting and much less threatening than my true form. But that matters not! You entered"
+		},
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "cheating",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "my realm..."
+		},
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.1,
+			"portrait": "cheating",
+			"boxState": "normal",
+			"expression": "smile",
+			"text": "And I will take you out of it!"
+		},
+		{
+			"sound": "bambi_dialogue",
+			"speed": 0.025,
+			"portrait": "cheating",
+			"boxState": "normal",
+			"expression": "smile",
+			"text": "HAHAHAHHAHAHAHHAHAHAHAHAHAHAHAHAHH\\nHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\\nHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\\nHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\\nHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"
+		}
+	]
+}

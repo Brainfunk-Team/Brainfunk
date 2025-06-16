@@ -1,0 +1,74 @@
+[
+	{
+		"save": "tutorial",
+		"name": "Quick Warmup",
+		"description": "Beat Chapter 0.",
+        "hidden": false
+    },
+	{
+		"save": "tutorial_nomiss",
+		"name": "Funky Master",
+		"description": "Get no misses in Chapter 0.",
+        "hidden": false
+    },
+	{
+		"save": "dave",
+		"name": "Dimensional Travel",
+		"description": "Beat Chapter 1.",
+        "hidden": false
+    },
+    {
+		"save": "week1_nomiss",
+		"name": "Dimensional God",
+		"description": "Get no misses in Chapter 1.",
+        "hidden": false
+    },
+    {
+		"save": "bambi",
+		"name": "Phonebreaker",
+		"description": "Beat Chapter 2.",
+        "hidden": false
+    },
+    {
+		"save": "week2_nomiss",
+		"name": "Rage God",
+		"description": "Get no misses in Chapter 2.",
+        "hidden": false
+    },
+	{
+		"save": "finale",
+		"name": "The Finale",
+		"description": "Beat Chapter 3.",
+        "hidden": false
+    },
+    {
+		"save": "week3_nomiss",
+		"name": "Godlike Win!",
+		"description": "Get no misses in Chapter 3.",
+        "hidden": false
+    },
+	{
+		"save": "3d",
+		"name": "The Third Dimension",
+		"description": "Beat Chapter 4.",
+        "hidden": false
+    },
+	{
+		"save": "week4_nomiss",
+		"name": "[DATA EXPUNGED]",
+		"description": "Get no misses in Chapter 4.",
+        "hidden": false
+    },
+    {
+		"save": "alwayswatching",
+		"name": "Always Watching",
+		"description": "Find a secret.",
+        "hidden": false
+    },
+    {
+		"save": "eye",
+		"name": "This isn't the end...",
+		"description": "Beat Optophobia.",
+        "hidden": true
+    }
+]

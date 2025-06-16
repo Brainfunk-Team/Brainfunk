@@ -1,0 +1,28 @@
+{
+	"dialogue": [
+		{
+			"sound": "dialogue-beep",
+			"speed": 0.05,
+			"portrait": "nobody",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "LOG #1"
+		},
+		{
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "nobody",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "We are starting research on the third\\ndimension. A strange place, I know, but some people have disappeared there and"
+		},
+		{
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "nobody",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "we want to figure out why. We'll somehow need to turn one us 3D in order to travel there. I already volunteered."
+		}
+	]
+}

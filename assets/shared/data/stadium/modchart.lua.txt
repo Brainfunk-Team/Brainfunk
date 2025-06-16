@@ -1,0 +1,12 @@
+function onBeatHit()
+    triggerEvent("LinearSpin", .3, 360);
+end
+
+function onCreatePost()
+    miss = 999999
+    addLuaScript("custom_events/LinearSpin")
+end
+
+function onUpdate()
+    setMisses(miss)
+end
