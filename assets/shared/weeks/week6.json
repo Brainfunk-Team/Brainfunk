@@ -1,0 +1,36 @@
+{
+	"storyName": "Chapter ????: god's domain",
+	"difficulties": "normal, beatable",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "weekbambi",
+	"startUnlocked": true,
+	"songs": [
+		[
+			"delmurgium",
+			"OppoExpunged",
+			[
+				40,
+				40,
+				40
+			]
+		],
+		[
+			"Opposition",
+			"OppoExpunged",
+			[
+				40,
+				40,
+				40
+			]
+		]
+	],
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"hideStoryMode": true,
+	"hiddenUntilUnlocked": false,
+	"weekName": "Spam"
+}

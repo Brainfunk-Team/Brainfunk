@@ -1,0 +1,45 @@
+{
+	"storyName": "chapter 4: the third dimension",
+	"difficulties": "Normal",
+	"hideFreeplay": false,
+	"weekBackground": "3D",
+	"weekBefore": "",
+	"startUnlocked": false,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"bothersome",
+			"dave-angey",
+			[
+				255,
+				140,
+				140
+			]
+		],
+		[
+			"incomprehensibilities",
+			"glitch-dave",
+			[
+				0,
+				0,
+				0
+			]
+		],
+		[
+			"exploitation",
+			"expunged",
+			[
+				95,
+				0,
+				0
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekName": "Week3D",
+	"hiddenUntilUnlocked": false
+}

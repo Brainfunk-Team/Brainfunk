@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="corrupt-dave-3d.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="down0000" x="749" y="989" width="749" height="996" frameX="2" frameY="2" frameWidth="745" frameHeight="992"/>
+	<SubTexture name="down0001" x="1498" y="989" width="749" height="996" frameX="2" frameY="2" frameWidth="745" frameHeight="992"/>
+	<SubTexture name="down0002" x="0" y="989" width="749" height="996" frameX="2" frameY="2" frameWidth="745" frameHeight="992"/>
+	<SubTexture name="idle0000" x="3071" y="986" width="746" height="991" frameX="2" frameY="2" frameWidth="742" frameHeight="987"/>
+	<SubTexture name="idle0001" x="3821" y="0" width="746" height="991" frameX="2" frameY="2" frameWidth="742" frameHeight="987"/>
+	<SubTexture name="idle0002" x="3071" y="1977" width="746" height="991" frameX="2" frameY="2" frameWidth="742" frameHeight="987"/>
+	<SubTexture name="left0000" x="777" y="0" width="777" height="989" frameX="2" frameY="2" frameWidth="773" frameHeight="985"/>
+	<SubTexture name="left0001" x="0" y="0" width="777" height="989" frameX="2" frameY="2" frameWidth="773" frameHeight="985"/>
+	<SubTexture name="left0002" x="1554" y="0" width="777" height="989" frameX="2" frameY="2" frameWidth="773" frameHeight="985"/>
+	<SubTexture name="right0000" x="2230" y="1985" width="750" height="986" frameX="2" frameY="2" frameWidth="746" frameHeight="982"/>
+	<SubTexture name="right0001" x="3071" y="0" width="750" height="986" frameX="2" frameY="2" frameWidth="746" frameHeight="982"/>
+	<SubTexture name="right0002" x="1480" y="1985" width="750" height="986" frameX="2" frameY="2" frameWidth="746" frameHeight="982"/>
+	<SubTexture name="up0000" x="2331" y="0" width="740" height="1002" frameX="2" frameY="2" frameWidth="736" frameHeight="998"/>
+	<SubTexture name="up0001" x="740" y="1985" width="740" height="1002" frameX="2" frameY="2" frameWidth="736" frameHeight="998"/>
+	<SubTexture name="up0002" x="0" y="1985" width="740" height="1002" frameX="2" frameY="2" frameWidth="736" frameHeight="998"/>
+</TextureAtlas>

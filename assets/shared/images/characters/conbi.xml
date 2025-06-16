@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="conbi.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="conbi0000" x="0" y="0" width="206" height="575" frameX="-1" frameY="-5" frameWidth="205" frameHeight="587"/>
+</TextureAtlas>

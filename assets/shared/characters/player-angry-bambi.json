@@ -1,0 +1,63 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [-5, 0],
+			"anim": "idle",
+			"fps": 24,
+			"name": "a_bambi idle",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-2, -27],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "a_bambi down",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-21, 43],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "a_bambi up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-78, 82],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "a_bambi phone",
+			"indices": []
+		},
+		{
+			"offsets": [-96, -3],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": true,
+			"name": "a_bambi left"
+		},
+		{
+			"offsets": [15, 3],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": true,
+			"name": "a_bambi right"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/Angry_Bambi",
+	"position": [0, 350],
+	"healthicon": "bambi-angey",
+	"flip_x": false,
+	"healthbar_colors": [37, 191, 55],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

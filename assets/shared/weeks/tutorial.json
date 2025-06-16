@@ -1,0 +1,27 @@
+{
+	"storyName": "chapter 0: warmup",
+	"difficulties": "tutorial",
+	"hideFreeplay": false,
+	"weekBackground": "warmup",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"practice",
+			"dave",
+			[
+				46,
+				53,
+				255
+			]
+		]
+	],
+	"weekName": "Warmup",
+	"hiddenUntilUnlocked": false
+}

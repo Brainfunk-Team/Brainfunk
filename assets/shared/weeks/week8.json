@@ -1,0 +1,36 @@
+{
+	"storyName": "Chapter ????: god's domain",
+	"difficulties": "normal",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "weekbambi",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"hideStoryMode": true,
+	"songs": [
+		[
+			"the phone",
+			"bambi",
+			[
+				146,
+				253,
+				113
+			]
+		],
+		[
+			"Bedtime",
+			"tristan-opponent",
+			[
+				246,
+				33,
+				33
+			]
+		]
+	],
+	"weekName": "zfreeplay",
+	"hiddenUntilUnlocked": false
+}

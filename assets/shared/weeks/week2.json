@@ -1,0 +1,45 @@
+{
+	"storyName": "chapter 2: Bambi's unneeded rage",
+	"difficulties": "normal",
+	"hideFreeplay": false,
+	"weekBackground": "bamboi",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"songs": [
+		[
+			"Kettle corn",
+			"bambi",
+			[
+				95,
+				233,
+				53
+			]
+		],
+		[
+			"Agro-cultured",
+			"bambi",
+			[
+				95,
+				233,
+				53
+			]
+		],
+		[
+			"Phonebreaker",
+			"bambi-angey",
+			[
+				255,
+				113,
+				73
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hideStoryMode": false,
+	"hiddenUntilUnlocked": false,
+	"weekName": "Week2"
+}

@@ -1,0 +1,27 @@
+{
+	"storyName": "Chapter 5: Bandu's fun phone land",
+	"difficulties": "Normal",
+	"hideFreeplay": false,
+	"weekBackground": "bandu",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"phones",
+			"bandu",
+			[
+				26,
+				253,
+				155
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Week Bandu"
+}
