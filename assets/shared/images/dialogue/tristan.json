@@ -1,0 +1,63 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		210,
+		90
+	],
+	"scale": 1.6,
+	"animations": [
+		{
+			"loop_name": "",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "content",
+			"anim": "content",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "festival",
+			"anim": "festival",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "irritated",
+			"anim": "irritated",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "sad",
+			"anim": "sad",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "tristan"
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="expunged.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="default0000" x="1249" y="0" width="1186" height="1456" frameX="2" frameY="2" frameWidth="1182" frameHeight="1452"/>
+	<SubTexture name="smile 10000" x="0" y="0" width="1249" height="1417" frameX="2" frameY="-18" frameWidth="1245" frameHeight="1452"/>
+	<SubTexture name="smile 20000" x="0" y="1417" width="1223" height="1429" frameX="2" frameY="-12" frameWidth="1219" frameHeight="1452"/>
+	<SubTexture name="laugh0000" x="2435" y="0" width="1229" height="1395" frameX="2" frameY="-29" frameWidth="1225" frameHeight="1452"/>
+</TextureAtlas>

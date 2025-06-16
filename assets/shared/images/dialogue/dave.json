@@ -1,0 +1,116 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		230,
+		100
+	],
+	"no_antialiasing": false,
+	"scale": 1.7,
+	"animations": [
+		{
+			"anim": "talk",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "dave_happy",
+			"idle_name": "dave_happy"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "excited",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "dave_annoyed",
+			"idle_name": "dave_annoyed"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "pissed",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "dave_furious",
+			"idle_name": "dave_furious"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "shocked",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "dave_shocked",
+			"idle_name": "dave_shocked"
+		},
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"anim": "confused",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_name": "dave_erm",
+			"loop_name": "dave_erm"
+		},
+		{
+			"idle_offsets": [
+				72,
+				18
+			],
+			"anim": "3d",
+			"loop_offsets": [
+				73,
+				17
+			],
+			"idle_name": "dave_3d_scared",
+			"loop_name": "dave_3d_scared"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "bruh",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "dave_postMaze",
+			"idle_name": "dave_postMaze"
+		},
+		{
+			"loop_name": "glitch",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "glitch",
+			"anim": "glitch",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "dave"
+}

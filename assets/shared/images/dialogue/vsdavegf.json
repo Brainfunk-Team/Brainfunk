@@ -1,0 +1,63 @@
+{
+	"dialogue_pos": "center",
+	"position": [
+		-50,
+		90
+	],
+	"scale": 1.75,
+	"animations": [
+		{
+			"loop_name": "gf_cheer",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "gf_cheer",
+			"anim": "cheer",
+			"loop_offsets": [
+				0,
+				-1
+			]
+		},
+		{
+			"loop_name": "gf_confused",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "gf_confused",
+			"anim": "confused",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "gf_what",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "gf_what",
+			"anim": "bruh",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "gf_happy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "gf_happy",
+			"anim": "happy",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "vs_dave_gf"
+}
