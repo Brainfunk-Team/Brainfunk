@@ -1,0 +1,129 @@
+{
+	"camera_boyfriend": [
+		0,
+		0
+	],
+	"_editorMeta": {
+		"boyfriend": "BFDel",
+		"gf": "glitchy",
+		"dad": "trueexpunged"
+	},
+	"preload": {
+		"images/stage_light": 2,
+		"images/stagecurtains": 2,
+		"images/stagefront": 3,
+		"images/stageback": 3
+	},
+	"girlfriend": [
+		-1135,
+		-245
+	],
+	"stageUI": "",
+	"boyfriend": [
+		755,
+		65
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"defaultZoom": 0.4,
+	"objects": [
+		{
+			"x": -1961,
+			"y": -1156,
+			"scale": [
+				10,
+				10
+			],
+			"image": "glitchsky/bg",
+			"flipX": false,
+			"filters": 3,
+			"color": "00000",
+			"angle": 0,
+			"name": "bg",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				0.8,
+				0.85
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"type": "gf"
+		},
+		{
+			"type": "dad"
+		},
+		{
+			"x": -1765,
+			"y": -1080,
+			"scale": [
+				4500,
+				2900
+			],
+			"filters": 3,
+			"color": "4f0e73",
+			"angle": 0,
+			"name": "sprite1",
+			"scroll": [
+				0,
+				0
+			],
+			"alpha": 0.3,
+			"type": "square"
+		},
+		{
+			"type": "boyfriend"
+		},
+		{
+			"x": -2555,
+			"y": -1260,
+			"scale": [
+				10000,
+				10000
+			],
+			"filters": 3,
+			"color": "000000",
+			"angle": 0,
+			"name": "fade",
+			"scroll": [
+				0,
+				0
+			],
+			"alpha": 0,
+			"type": "square"
+		},
+		{
+			"x": -960,
+			"y": -560,
+			"scale": [
+				3200,
+				1850
+			],
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "shaderImage",
+			"scroll": [
+				0,
+				0
+			],
+			"alpha": 0,
+			"type": "square"
+		}
+	],
+	"camera_speed": 1,
+	"directory": "week1",
+	"opponent": [
+		-375,
+		-145
+	],
+	"camera_opponent": [
+		0,
+		0
+	],
+	"hide_girlfriend": false
+}

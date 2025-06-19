@@ -54,7 +54,7 @@ class Main extends Sprite
 		height: 720, // WINDOW height
 		initialState: TitleState, // initial game state
 		framerate: 60, // default framerate
-		skipSplash: true, // if the default flixel splash screen should be skipped
+		skipSplash: false, // if the default flixel splash screen should be skipped
 		startFullscreen: false // if the game should start at fullscreen mode
 	};
 
@@ -239,7 +239,7 @@ class Main extends Sprite
 		// remove if you're modding and want the crash log message to contain the link
 		// please remember to actually modify the link for the github page to report the issues to.
 		#if officialBuild
-		errMsg += "\nPlease report this error to the GitHub page: https://github.com/ShadowMario/FNF-PsychEngine";
+		errMsg += "\nPlease report this error to the GitHub page: https://github.com/Brainy0789/BrainyEngine";
 		#end
 		errMsg += "\n\n> Crash Handler written by: sqirra-rng";
 

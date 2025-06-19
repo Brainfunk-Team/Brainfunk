@@ -23,8 +23,8 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 		optionsArray.push(goption);
 
 		var option:GameplayOption = new GameplayOption('Scroll Speed', 'scrollspeed', FLOAT, 1);
-		option.scrollSpeed = 2.0;
-		option.minValue = 0.35;
+		option.scrollSpeed = 100.0;
+		option.minValue = 0;
 		option.changeValue = 0.05;
 		option.decimals = 2;
 		if (goption.getValue() != "constant")

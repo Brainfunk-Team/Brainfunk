@@ -89,7 +89,7 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 			"What should the Time Bar display?",
 			'timeBarType',
 			STRING,
-			['Time Left', 'Time Elapsed', 'Song Name', 'Disabled']);
+			['Time Left', 'Time Elapsed', 'Song Name', 'Time Left + Song Name', 'Time Elapsed + Song Name', 'Disabled']);
 		addOption(option);
 
 		var option:Option = new Option('Flashing Lights',

@@ -1,0 +1,55 @@
+{
+	"animations": [
+		{
+			"offsets": [0, 0],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"offsets": [0, 0],
+			"indices": [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+			"fps": 96,
+			"anim": "singUP",
+			"loop": false,
+			"name": "up"
+		},
+		{
+			"offsets": [50, 0],
+			"indices": [0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 5],
+			"fps": 96,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "left"
+		},
+		{
+			"offsets": [0, -60],
+			"indices": [0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 5],
+			"fps": 96,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "down"
+		},
+		{
+			"offsets": [-30, 0],
+			"indices": [0, 1, 2, 3, 4, 4, 4, 4, 4, 4, 4],
+			"fps": 96,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "right"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/cheatingbrainy",
+	"position": [-780, -240],
+	"healthicon": "bambi-3d",
+	"flip_x": false,
+	"healthbar_colors": [13, 179, 27],
+	"camera_position": [-140, -120],
+	"sing_duration": 4,
+	"scale": 1.5,
+	"_editor_isPlayer": false
+}

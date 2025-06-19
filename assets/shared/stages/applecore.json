@@ -1,0 +1,124 @@
+{
+	"camera_boyfriend": [
+		0,
+		0
+	],
+	"_editorMeta": {
+		"boyfriend": "bf",
+		"gf": "cuberoot-dave",
+		"dad": "bandu"
+	},
+	"preload": {
+		"images/stage_light": 2,
+		"images/stagecurtains": 2,
+		"images/stagefront": 3,
+		"images/stageback": 3
+	},
+	"girlfriend": [
+		1060,
+		130
+	],
+	"stageUI": "3D",
+	"boyfriend": [
+		770,
+		100
+	],
+	"objects": [
+		{
+			"x": -2042,
+			"y": -861,
+			"scale": [
+				2,
+				1.95
+			],
+			"image": "applecore/hi",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "bg",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				0.25,
+				0.25
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -1236,
+			"y": -103,
+			"scale": [
+				0.5,
+				0.5
+			],
+			"image": "applecore/minion",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "minion",
+			"firstAnimation": "cartwheel",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				0.5,
+				0.5
+			],
+			"alpha": 1,
+			"animations": [
+				{
+					"offsets": null,
+					"loop": true,
+					"fps": 24,
+					"anim": "cartwheel",
+					"indices": [],
+					"name": "cartwheel"
+				},
+				{
+					"offsets": null,
+					"loop": true,
+					"fps": 24,
+					"anim": "poip",
+					"indices": [],
+					"name": "poip"
+				},
+				{
+					"offsets": null,
+					"loop": true,
+					"fps": 24,
+					"anim": "jump",
+					"indices": [],
+					"name": "god i love trampolining"
+				}
+			],
+			"type": "animatedSprite"
+		},
+		{
+			"type": "gf"
+		},
+		{
+			"type": "dad"
+		},
+		{
+			"type": "boyfriend"
+		}
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"defaultZoom": 0.4,
+	"camera_speed": 1,
+	"directory": "week1",
+	"opponent": [
+		820,
+		320
+	],
+	"camera_opponent": [
+		0,
+		0
+	],
+	"hide_girlfriend": false
+}

@@ -1,0 +1,27 @@
+{
+	"songs": [
+		[
+			"transformation",
+			"dave-annoyed",
+			[
+				86,
+				53,
+				255
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "transformation",
+	"difficulties": "",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "Chapter 4.5: transformation",
+	"weekName": "Week 4.5",
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

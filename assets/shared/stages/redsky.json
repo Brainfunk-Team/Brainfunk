@@ -1,0 +1,115 @@
+{
+	"camera_boyfriend": [
+		0,
+		0
+	],
+	"preload": {
+		"images/stageback": 3,
+		"images/stagefront": 3,
+		"images/stagecurtains": 2,
+		"images/stage_light": 2
+	},
+	"_editorMeta": {
+		"boyfriend": "bf",
+		"dad": "dave",
+		"gf": "gf"
+	},
+	"boyfriend": [
+		770,
+		100
+	],
+	"stageUI": "",
+	"girlfriend": [
+		400,
+		130
+	],
+	"objects": [
+		{
+			"x": -2216,
+			"y": -1031,
+			"scale": [
+				5,
+				5
+			],
+			"image": "redsky/redsky",
+			"flipX": false,
+			"filters": 3,
+			"color": "00000",
+			"angle": 0,
+			"name": "bg",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				0.8,
+				0.85
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": 125,
+			"y": 424,
+			"scale": [
+				2.95,
+				2.95
+			],
+			"image": "redsky/cube",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite2",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"type": "gf"
+		},
+		{
+			"type": "dad"
+		},
+		{
+			"type": "boyfriend"
+		},
+		{
+			"x": -2555,
+			"y": -1260,
+			"scale": [
+				10000,
+				10000
+			],
+			"filters": 3,
+			"color": "000000",
+			"angle": 0,
+			"name": "fade",
+			"scroll": [
+				0,
+				0
+			],
+			"alpha": 0,
+			"type": "square"
+		}
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"defaultZoom": 0.45,
+	"opponent": [
+		-375,
+		-145
+	],
+	"directory": "week1",
+	"camera_speed": 1,
+	"hide_girlfriend": false,
+	"camera_opponent": [
+		0,
+		0
+	]
+}

@@ -2,6 +2,7 @@ package options;
 
 import states.MainMenuState;
 import backend.StageData;
+import states.PlayState;
 
 class OptionsState extends MusicBeatState
 {
@@ -11,8 +12,9 @@ class OptionsState extends MusicBeatState
 		'Adjust Delay and Combo',
 		'Graphics',
 		'Visuals',
-		'Gameplay'
-		#if TRANSLATIONS_ALLOWED , 'Language' #end
+		'Gameplay',
+		'Brainfunk Settings' //,
+		//if TRANSLATIONS_ALLOWED, 'Language' #end
 	];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
@@ -34,6 +36,8 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				MusicBeatState.switchState(new options.NoteOffsetState());
+			case 'Brainfunk Settings':
+				openSubState(new options.BrainfunkSettingsSubState());
 			case 'Language':
 				openSubState(new options.LanguageSubState());
 		}
@@ -50,7 +54,7 @@ class OptionsState extends MusicBeatState
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
-		bg.color = 0xFFea71fd;
+		bg.color = 0xfff2da00;
 		bg.updateHitbox();
 
 		bg.screenCenter();

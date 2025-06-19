@@ -1,0 +1,247 @@
+{
+	"camera_boyfriend": [
+		-150,
+		0
+	],
+	"_editorMeta": {
+		"boyfriend": "bf",
+		"gf": "gf",
+		"dad": "bambi"
+	},
+	"preload": {
+		"images/stage_light": 2,
+		"images/stagecurtains": 2,
+		"images/stagefront": 3,
+		"images/stageback": 3
+	},
+	"girlfriend": [
+		400,
+		130
+	],
+	"stageUI": "",
+	"boyfriend": [
+		910,
+		160
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"defaultZoom": 0.65,
+	"objects": [
+		{
+			"x": -736,
+			"y": -717,
+			"scale": [
+				1,
+				1
+			],
+			"image": "sky",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite8",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				0.1,
+				0.1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -259,
+			"y": -66,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/gm_flatgrass",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite6",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -202,
+			"y": -140,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/funfarmhouse",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite5",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -737,
+			"y": 326,
+			"scale": [
+				1.1,
+				2.2
+			],
+			"image": "farm/grass lands",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite1",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": 872,
+			"y": 117,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/cornFence2",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite3",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -431,
+			"y": 145,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/cornFence",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite2",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -90,
+			"y": 358,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/sign",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite7",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": 1118,
+			"y": 531,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/cornbag",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite4",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"type": "gf"
+		},
+		{
+			"type": "dad"
+		},
+		{
+			"type": "boyfriend"
+		},
+		{
+			"x": -1440,
+			"y": -680,
+			"scale": [
+				10000,
+				10000
+			],
+			"filters": 3,
+			"color": "000000",
+			"angle": 0,
+			"name": "fade",
+			"scroll": [
+				0,
+				0
+			],
+			"alpha": 0.4,
+			"type": "square"
+		}
+	],
+	"camera_speed": 1,
+	"directory": "week1",
+	"opponent": [
+		80,
+		195
+	],
+	"camera_opponent": [
+		200,
+		0
+	],
+	"hide_girlfriend": false
+}

@@ -55,13 +55,16 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'Funny notes does \"Tick!\" when you hit them.',
 			'hitsoundVolume',
 			PERCENT);
-		addOption(option);
+		
 		option.scrollSpeed = 1.6;
 		option.minValue = 0.0;
 		option.maxValue = 1;
 		option.changeValue = 0.1;
 		option.decimals = 1;
 		option.onChange = onChangeHitsoundVolume;
+
+		addOption(option);
+
 
 		var option:Option = new Option('Rating Offset',
 			'Changes how late/early you have to hit for a "Sick!"\nHigher values mean you have to hit later.',

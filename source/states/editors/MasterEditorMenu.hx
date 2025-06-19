@@ -7,6 +7,10 @@ import objects.Character;
 import states.MainMenuState;
 import states.FreeplayState;
 
+import lime.ui.Window;
+
+import openfl.Lib;
+
 class MasterEditorMenu extends MusicBeatState
 {
 	var options:Array<String> = [
@@ -17,7 +21,8 @@ class MasterEditorMenu extends MusicBeatState
 		'Menu Character Editor',
 		'Dialogue Editor',
 		'Dialogue Portrait Editor',
-		'Note Splash Editor'
+		'Note Splash Editor',
+		'Mysterious Editor'
 	];
 	private var grpTexts:FlxTypedGroup<Alphabet>;
 	private var directories:Array<String> = [null];
@@ -78,6 +83,8 @@ class MasterEditorMenu extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+
+
 		if (controls.UI_UP_P)
 		{
 			changeSelection(-1);
@@ -121,6 +128,10 @@ class MasterEditorMenu extends MusicBeatState
 					LoadingState.loadAndSwitchState(new DialogueCharacterEditorState(), false);
 				case 'Note Splash Editor':
 					MusicBeatState.switchState(new NoteSplashEditorState());
+				case 'Mysterious Editor':
+					Lib.application.window.focus();
+					Lib.application.window.alert("An unknown error occured.\nPlease, do not report this error.", "Error");
+					Lib.application.window.close();
 			}
 			FlxG.sound.music.volume = 0;
 			FreeplayState.destroyFreeplayVocals();

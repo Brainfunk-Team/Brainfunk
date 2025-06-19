@@ -38,14 +38,25 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			["Brainfunk Team"],
+			["Brainy7890", "brainy7890", "Director of Brainfunk, also composed and programmed.", "https://github.com/Brainy0789/BrainyEngine", "ffc051"],
+			["SKiD03", "skid03", "Composer", "https://www.youtube.com/channel/UC0M_2RT49Y-IonHcyPdcNVw", "fff700"],
+			["Fluffen", "fluffen", "Composer", "https://www.bandlab.com/fluffy_fluffen_uwu", "ffc051"],
+			[""],
+			["Special Thanks"],
+			["MoldyGH", "moldy", "Creator of VS Dave and Bambi!", "https://www.youtube.com/@MoldyGangstaHero/", "4820fa"],
+			[""],
+			["Brainfunk Discord"],
+			["Join the Brainfunk Discord!", "discord", "", "https://discord.gg/2sFz43m4Ka", "5165F6"],
+			[""],
 			["Psych Engine Team"],
 			["Shadow Mario",		"shadowmario",		"Main Programmer and Head of Psych Engine",					"https://ko-fi.com/shadowmario",	"444444"],
 			["Riveren",				"riveren",			"Main Artist/Animator of Psych Engine",						"https://x.com/riverennn",			"14967B"],
 			[""],
-			["Former Engine Members"],
+			["Former Psych Engine Members"],
 			["bb-panzu",			"bb",				"Ex-Programmer of Psych Engine",							"https://x.com/bbsub3",				"3E813A"],
 			[""],
-			["Engine Contributors"],
+			["Psych Engine Contributors"],
 			["crowplexus",			"crowplexus",	"Linux Support, HScript Iris, Input System v3, and Other PRs",	"https://twitter.com/IamMorwen",	"CFCFCF"],
 			["Kamizeta",			"kamizeta",			"Creator of Pessy, Psych Engine's mascot.",				"https://www.instagram.com/cewweey/",	"D21C11"],
 			["MaxNeton",			"maxneton",			"Loading Screen Easter Egg Artist/Animator.",	"https://bsky.app/profile/maxneton.bsky.social","3C2E4E"],
@@ -63,9 +74,7 @@ class CreditsState extends MusicBeatState
 			["PhantomArcade",		"phantomarcade",	"Animator of Friday Night Funkin'",							"https://x.com/PhantomArcade3K",	"FADC45"],
 			["evilsk8r",			"evilsk8r",			"Artist of Friday Night Funkin'",							"https://x.com/evilsk8r",			"5ABD4B"],
 			["kawaisprite",			"kawaisprite",		"Composer of Friday Night Funkin'",							"https://x.com/kawaisprite",		"378FC7"],
-			[""],
-			["Psych Engine Discord"],
-			["Join the Psych Ward!", "discord", "", "https://discord.gg/2ka77eMXDv", "5165F6"]
+			[""]
 		];
 		
 		for(i in defaultList)
