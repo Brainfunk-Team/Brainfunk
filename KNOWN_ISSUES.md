@@ -1,3 +1,5 @@
+# READ THIS BEFORE YOU REPORT AN ISSUE
+
 When entering controls settings, you get a crash :(
 No wavy bgs :(
 Insanity Dave's spritesheet is missing :o (easy fix)
