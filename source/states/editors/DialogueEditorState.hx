@@ -218,6 +218,7 @@ class DialogueEditorState extends MusicBeatState implements PsychUIEventHandler.
 			daText.finishText();
 		else if(daText.delay > 0)
 		{
+			
 			if(character.jsonFile.animations.length > curAnim && character.jsonFile.animations[curAnim] != null) {
 				character.playAnim(character.jsonFile.animations[curAnim].anim);
 			}
