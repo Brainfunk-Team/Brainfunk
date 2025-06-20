@@ -188,10 +188,10 @@ class Paths
 		return getPath('data/$key.json', TEXT, folder, true);
 
 	inline static public function shaderFragment(key:String, ?folder:String)
-		return getPath('shaders/$key.frag', TEXT, folder, true);
+		return getPath('shaders/$key.frag', TEXT, folder, false);
 
 	inline static public function shaderVertex(key:String, ?folder:String)
-		return getPath('shaders/$key.vert', TEXT, folder, true);
+		return getPath('shaders/$key.vert', TEXT, folder, false);
 
 	inline static public function lua(key:String, ?folder:String)
 		return getPath('$key.lua', TEXT, folder, true);
