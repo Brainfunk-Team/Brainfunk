@@ -1,4 +1,7 @@
+![brainfunk logo](https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1)
+
 # BrainyEngine
+
 **THIS GAME IS STILL IN ALPHA PHASE, BUGS WILL OCCUR.**
 
 This is the engine used for Dave and Bambi Brainfunk.
