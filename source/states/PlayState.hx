@@ -264,6 +264,8 @@ class PlayState extends MusicBeatState
 	public var startCallback:Void->Void = null;
 	public var endCallback:Void->Void = null;
 
+	public var img:String;
+
 	private static var _lastLoadedModDirectory:String = '';
 	public static var nextReloadAll:Bool = false;
 	override public function create()
@@ -322,13 +324,17 @@ class PlayState extends MusicBeatState
 		Conductor.bpm = SONG.bpm;
 
 		#if DISCORD_ALLOWED
+		img = "logo";
 		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
 		storyDifficultyText = Difficulty.getString();
 
-		if (isStoryMode)
+		if (isStoryMode) {
 			detailsText = "Story Mode: " + WeekData.getCurrentWeek().weekName;
-		else
+		}
+		else {
 			detailsText = "Freeplay";
+		};
+
 
 		// String for when the game is paused
 		detailsPausedText = "Paused - " + detailsText;
@@ -1262,7 +1268,8 @@ class PlayState extends MusicBeatState
 
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence (with Time Left)
-		if(autoUpdateRPC) DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength);
+		if(autoUpdateRPC) DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", img, true, songLength, "img");
+
 		#end
 		setOnScripts('songLength', songLength);
 		callOnScripts('onSongStart');
@@ -1283,6 +1290,8 @@ class PlayState extends MusicBeatState
 				songSpeed = SONG.speed * ClientPrefs.getGameplaySetting('scrollspeed');
 			case "constant":
 				songSpeed = ClientPrefs.getGameplaySetting('scrollspeed');
+			case "exponential":
+				songSpeed = Math.pow(SONG.speed, ClientPrefs.getGameplaySetting('scrollspeed'));
 		}
 
 		var songData = SONG;

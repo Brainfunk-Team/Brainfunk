@@ -167,16 +167,16 @@ class WeekEditorState extends MusicBeatState implements PsychUIEventHandler.Psyc
 		};
 
 		tab_group.add(new FlxText(songsInputText.x, songsInputText.y - 18, 0, 'Songs:'));
-		tab_group.add(new FlxText(opponentInputText.x, opponentInputText.y - 18, 0, 'Characters:'));
+		//tab_group.add(new FlxText(opponentInputText.x, opponentInputText.y - 18, 0, 'Characters:')); Don't use it so disabling menu character
 		tab_group.add(new FlxText(backgroundInputText.x, backgroundInputText.y - 18, 0, 'Background Asset:'));
 		tab_group.add(new FlxText(displayNameInputText.x, displayNameInputText.y - 18, 0, 'Display Name:'));
 		tab_group.add(new FlxText(weekNameInputText.x, weekNameInputText.y - 18, 0, 'Week Name (for Reset Score Menu):'));
 		tab_group.add(new FlxText(weekFileInputText.x, weekFileInputText.y - 18, 0, 'Week File:'));
 
 		tab_group.add(songsInputText);
-		tab_group.add(opponentInputText);
-		tab_group.add(boyfriendInputText);
-		tab_group.add(girlfriendInputText);
+		//tab_group.add(opponentInputText);
+		//tab_group.add(boyfriendInputText);
+		//tab_group.add(girlfriendInputText);
 		tab_group.add(backgroundInputText);
 
 		tab_group.add(displayNameInputText);
@@ -215,7 +215,7 @@ class WeekEditorState extends MusicBeatState implements PsychUIEventHandler.Psyc
 		
 		tab_group.add(new FlxText(weekBeforeInputText.x, weekBeforeInputText.y - 28, 0, 'Week File name of the Week you have\nto finish for Unlocking:'));
 		tab_group.add(new FlxText(difficultiesInputText.x, difficultiesInputText.y - 20, 0, 'Difficulties:'));
-		tab_group.add(new FlxText(difficultiesInputText.x, difficultiesInputText.y + 20, 0, 'Default difficulties are "Easy, Normal, Hard"\nwithout quotes.'));
+		tab_group.add(new FlxText(difficultiesInputText.x, difficultiesInputText.y + 20, 0, 'Default difficulties are "Normal"\nwithout quotes.'));
 		tab_group.add(weekBeforeInputText);
 		tab_group.add(difficultiesInputText);
 		tab_group.add(hiddenUntilUnlockCheckbox);
@@ -234,9 +234,9 @@ class WeekEditorState extends MusicBeatState implements PsychUIEventHandler.Psyc
 		weekNameInputText.text = weekFile.weekName;
 		weekFileInputText.text = weekFileName;
 		
-		opponentInputText.text = weekFile.weekCharacters[0];
-		boyfriendInputText.text = weekFile.weekCharacters[1];
-		girlfriendInputText.text = weekFile.weekCharacters[2];
+		//opponentInputText.text = weekFile.weekCharacters[0];
+		//boyfriendInputText.text = weekFile.weekCharacters[1];
+		//girlfriendInputText.text = weekFile.weekCharacters[2];
 
 		hideCheckbox.checked = weekFile.hideStoryMode;
 
@@ -317,13 +317,13 @@ class WeekEditorState extends MusicBeatState implements PsychUIEventHandler.Psyc
 		if(isMissing) {
 			weekThing.visible = false;
 			missingFileText.visible = true;
-			missingFileText.text = 'MISSING FILE: images/storymenu/' + assetName + '.png';
+			missingFileText.text = 'MISSING FILE: images/storymenu/' + assetName + '.png\nAdd it in, dumbass. Unless this is a freeplay week.';
 		}
 		recalculateStuffPosition();
 
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Week Editor", "Editting: " + weekFileName);
+		DiscordClient.changePresence("Week Editor", "Editing: " + weekFileName);
 		#end
 	}
 	
@@ -336,12 +336,12 @@ class WeekEditorState extends MusicBeatState implements PsychUIEventHandler.Psyc
 				weekFileName = weekFileInputText.text.trim();
 				unsavedProgress = true;
 				reloadWeekThing();
-			} else if(sender == opponentInputText || sender == boyfriendInputText || sender == girlfriendInputText) {
-				weekFile.weekCharacters[0] = opponentInputText.text.trim();
-				weekFile.weekCharacters[1] = boyfriendInputText.text.trim();
-				weekFile.weekCharacters[2] = girlfriendInputText.text.trim();
-				unsavedProgress = true;
-				updateText();
+			//} else if(sender == opponentInputText || sender == boyfriendInputText || sender == girlfriendInputText) {
+				//weekFile.weekCharacters[0] = opponentInputText.text.trim();
+				//weekFile.weekCharacters[1] = boyfriendInputText.text.trim();
+				//weekFile.weekCharacters[2] = girlfriendInputText.text.trim();
+				//unsavedProgress = true;
+				//updateText();
 			} else if(sender == backgroundInputText) {
 				weekFile.weekBackground = backgroundInputText.text.trim();
 				unsavedProgress = true;
