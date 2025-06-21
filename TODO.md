@@ -1,6 +1,6 @@
 # TO DO LIST
 
-### BEFORE NEXT RELEASE
+### PREVIOUS RELEASES
 
 - [x] Weeks 0-5
 - [x] Add dialogue for Transformation
