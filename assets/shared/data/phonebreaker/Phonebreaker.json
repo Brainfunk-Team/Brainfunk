@@ -2189,7 +2189,7 @@
 	"offset": 0,
 	"song": "Phonebreaker",
 	"stage": "farm",
-	"needsVoices": true,
+	"needsVoices": false,
 	"format": "psych_v1",
 	"speed": 2.8,
 	"bpm": 115
