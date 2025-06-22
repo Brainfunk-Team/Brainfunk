@@ -1,4 +1,6 @@
-![brainfunk logo](https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1)
+<p align="center">
+  <img width="500" height="500" src="https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1">
+</p>
 
 # BrainyEngine
 
