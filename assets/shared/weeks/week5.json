@@ -5,11 +5,6 @@
 	"weekBackground": "bandu",
 	"weekBefore": "tutorial",
 	"startUnlocked": true,
-	"weekCharacters": [
-		"",
-		"",
-		""
-	],
 	"hideStoryMode": false,
 	"songs": [
 		[
@@ -23,13 +18,27 @@
 		],
 		[
 			"broken screen",
-			"face",
+			"bandu-sad",
 			[
-				146,
-				113,
-				253
+				0,
+				115,
+				175
+			]
+		],
+		[
+			"windows",
+			"badai",
+			[
+				195,
+				33,
+				153
 			]
 		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
 	],
 	"weekName": "Week Bandu",
 	"hiddenUntilUnlocked": false

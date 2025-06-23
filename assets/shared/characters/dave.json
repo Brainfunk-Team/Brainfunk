@@ -1,49 +1,49 @@
 {
 	"animations": [
 		{
+			"loop": true,
 			"offsets": [13, 6],
-			"loop": true,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "down"
-		},
-		{
-			"offsets": [18, 9],
-			"loop": true,
 			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "left"
-		},
-		{
-			"offsets": [5, 18],
-			"loop": true,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "up"
-		},
-		{
-			"offsets": [-20, 5],
-			"loop": true,
-			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "right"
-		},
-		{
-			"loop": true,
-			"offsets": [0, 0],
-			"anim": "idle",
-			"fps": 24,
-			"name": "Idle",
+			"name": "down",
 			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [18, 9],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [5, 18],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-20, 5],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"offsets": [0, 0],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
 		}
 	],
 	"vocals_file": "",
 	"no_antialiasing": false,
-	"image": "characters/DAVE_3D",
+	"image": "characters/Dave_3D",
 	"position": [-100, -240],
 	"healthicon": "icon-dave-angey",
 	"flip_x": false,

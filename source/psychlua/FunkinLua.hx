@@ -1806,7 +1806,7 @@ class FunkinLua {
 	public function initLuaShader(name:String)
 	{
 		if(!ClientPrefs.data.shaders) return false;
-
+		runtimeShaders = ["wavy"=>["wavy.frag"]];
 		#if (!flash && sys)
 		if(runtimeShaders.exists(name))
 		{
@@ -1818,15 +1818,9 @@ class FunkinLua {
 			}
 		}
 
-		var foldersToCheck:Array<String> = [Paths.getSharedPath('shaders/')];
-		#if MODS_ALLOWED
-		foldersToCheck.push(Paths.mods('shaders/'));
-		if(Mods.currentModDirectory != null && Mods.currentModDirectory.length > 0)
-			foldersToCheck.insert(0, Paths.mods(Mods.currentModDirectory + '/shaders/'));
+		var foldersToCheck:Array<String> = ["assets/shared/shaders/"];
+		
 
-		for(mod in Mods.getGlobalMods())
-			foldersToCheck.insert(0, Paths.mods(mod + '/shaders/'));
-		#end
 
 		for (folder in foldersToCheck)
 		{

@@ -395,6 +395,8 @@ class PlayState extends MusicBeatState
 			case 'tank': new Tank();					//Week 7 - Ugh, Guns, Stress
 			case 'phillyStreets': new PhillyStreets(); 	//Weekend 1 - Darnell, Lit Up, 2Hot
 			case 'phillyBlazin': new PhillyBlazin();	//Weekend 1 - Blazin
+			case 'redsky': new Redsky();
+			case 'eyesky': new Eyesky();
 		}
 		if(isPixelStage) introSoundsSuffix = '-pixel';
 
@@ -3619,8 +3621,12 @@ class PlayState extends MusicBeatState
 			return true;
 		}
 
-		for (folder in Mods.directoriesWithFile(Paths.getSharedPath(), 'shaders/'))
+		var shaders:Array<String>;
+		shaders = ["wavy.frag"];
+
+		for (folder in shaders)
 		{
+			trace(folder);
 			var frag:String = folder + name + '.frag';
 			var vert:String = folder + name + '.vert';
 			var found:Bool = false;
@@ -3645,6 +3651,10 @@ class PlayState extends MusicBeatState
 				return true;
 			}
 		}
+
+		runtimeShaders = ["wavy"=>["wavy.frag"]];
+		createRuntimeShader("wavy");
+
 			#if (LUA_ALLOWED || HSCRIPT_ALLOWED)
 			addTextToDebug('Missing shader $name .frag AND .vert files!', FlxColor.RED);
 			#else

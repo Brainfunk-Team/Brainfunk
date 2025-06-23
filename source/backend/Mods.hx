@@ -91,6 +91,7 @@ class Mods
 		return mergedList;
 	}
 
+	
 	inline public static function directoriesWithFile(path:String, fileToFind:String, mods:Bool = true)
 	{
 		var foldersToCheck:Array<String> = [];
