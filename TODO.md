@@ -8,7 +8,8 @@
 - [x] Make week banner for Week 4.5
 
 ### NEXT RELEASE
-- [ ] Add mint and Fluffen to the credits
+- [ ] Add mint to the credits.
+- [x] add Fluffen to the credits
 
 ### FUTURE
 
