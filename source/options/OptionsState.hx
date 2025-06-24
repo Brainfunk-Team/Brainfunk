@@ -11,7 +11,7 @@ class OptionsState extends MusicBeatState
 		'Controls',
 		'Adjust Delay and Combo',
 		'Graphics',
-		'Visuals',
+		'Misc',
 		'Gameplay' //,
 		//'Brainfunk Settings' //, //AHH THIS A WIP DON'T LOOK AT ME!!!!!
 		//if TRANSLATIONS_ALLOWED, 'Language' #end
