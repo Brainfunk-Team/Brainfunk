@@ -4,13 +4,15 @@
 
 # BrainyEngine
 
-**THIS GAME IS STILL IN ALPHA AND BETA PHASE, BUGS WILL OCCUR.**
+***THIS GAME IS STILL IN ALPHA AND BETA PHASE, BUGS WILL OCCUR.***
 
 This is the engine used for Dave and Bambi Brainfunk.
 
 READ [THIS](https://github.com/Brainy0789/BrainyEngine/blob/main/KNOWN_ISSUES.md) BEFORE OPENING ANY ISSUES!
 
 [Original Psych Engine Repository](https://github.com/ShadowMario/FNF-PsychEngine)
+
+[Official Discord server](https://discord.gg/2sFz43m4Ka)
 
 ## Installation:
 
