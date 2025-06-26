@@ -11,6 +11,7 @@
 - [ ] Add mint to the credits.
 - [x] add Fluffen to the credits.
 - [x] *Wavy Backgrounds*
+- [ ] Midsong Text Editor
 
 ### FUTURE
 
