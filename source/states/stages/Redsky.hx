@@ -1,41 +1,42 @@
 package states.stages;
 
 import states.stages.objects.*;
-import shaders.Wavy;
+import stuff.VsDaveShaders;
 import backend.Conductor;
 
 class Redsky extends BaseStage
 {
-	var bg:BGSprite = new BGSprite('redsky/redsky', -2216, -1031, .85, .85);
+	var bg:BGSprite = new BGSprite('redsky/redsky', -600, -200, .85, .85);
+
 	override function create()
 	{
 		FlxG.camera.zoom = .45;
-		bg.shader = new Wavy();
-		bg.shader.data.uTime = { value: [0.0] };
-		bg.shader.data.uWaveAmplitude = { value: [0.01] };
-		bg.shader.data.uSpeed = { value: [2.0] };
-		bg.shader.data.uFrequency = { value: [5.0] };
-		bg.scale.set(5, 5);
+		bg.scale.set(1, 1);
 		bg.updateHitbox(); 
 		add(bg);
+		voidShader(bg); // This now correctly adds the glitch effect
 	}
 
-	override function createPost() {
+	override function createPost()
+	{
 		boyfriend.setPosition(770, 100);
 		dad.setPosition(-375, -145);
 		gf.setPosition(400, 130);
 	}
 
 	override function update(elapsed:Float)
-    {
-        super.update(elapsed);
+	{
+		var shad = cast(bg.shader, GlitchShader);
+		shad.uTime.value[0] += elapsed;
+	}
 
-        var time = Conductor.songPosition / 1000;
-        bg.shader.data.uTime.value = [time];
-		bg.shader.data.uWaveAmplitude.value = [0.01];
-		bg.shader.data.uSpeed.value = [2.0];
-		bg.shader.data.uFrequency.value = [5.0];
-
-    }
-
+	function voidShader(background:BGSprite)
+	{
+		var testshader:GlitchEffect = new GlitchEffect();
+		testshader.waveAmplitude = 0.1;
+		testshader.waveFrequency = 5;
+		testshader.waveSpeed = 2;
+		
+		background.shader = testshader.shader;
+	}
 }

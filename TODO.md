@@ -10,7 +10,7 @@
 ### NEXT RELEASE
 - [ ] Add mint to the credits.
 - [x] add Fluffen to the credits.
-- [ ] *Wavy Backgrounds*
+- [x] *Wavy Backgrounds*
 
 ### FUTURE
 
