@@ -4,7 +4,7 @@
 
 # BrainyEngine
 
-***THIS GAME IS STILL IN ALPHA AND BETA PHASE, BUGS WILL OCCUR.***
+***THIS GAME IS STILL IN ACTIVE DEVELOPMENT, BUGS WILL OCCUR.***
 
 This is the engine used for Dave and Bambi Brainfunk.
 
