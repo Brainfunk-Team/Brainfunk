@@ -6,15 +6,15 @@ import backend.Conductor;
 
 class Redsky extends BaseStage
 {
-	var bg:BGSprite = new BGSprite('redsky/redsky', -600, -200, .85, .85);
+	var bg:BGSprite = new BGSprite('redsky/redsky', -700, -200, .85, .85);
 
 	override function create()
 	{
 		FlxG.camera.zoom = .45;
-		bg.scale.set(1, 1);
+		bg.scale.set(2, 2);
 		bg.updateHitbox(); 
 		add(bg);
-		voidShader(bg); // This now correctly adds the glitch effect
+		voidShader(bg);
 	}
 
 	override function createPost()

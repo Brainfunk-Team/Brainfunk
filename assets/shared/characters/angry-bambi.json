@@ -1,44 +1,52 @@
 {
 	"animations": [
 		{
-			"loop": true,
 			"offsets": [-5, 0],
+			"loop": true,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "a_bambi idle",
-			"indices": []
+			"indices": [],
+			"name": "a_bambi idle"
 		},
 		{
-			"loop": true,
 			"offsets": [94, -6],
+			"loop": true,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "a_bambi left",
-			"indices": []
+			"indices": [],
+			"name": "a_bambi left"
 		},
 		{
-			"loop": true,
 			"offsets": [2, -27],
+			"loop": true,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "a_bambi down",
-			"indices": []
+			"indices": [],
+			"name": "a_bambi down"
 		},
 		{
-			"loop": true,
 			"offsets": [21, 43],
-			"anim": "singUP",
+			"loop": true,
 			"fps": 24,
-			"name": "a_bambi up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "a_bambi up"
 		},
 		{
-			"loop": true,
 			"offsets": [15, 3],
-			"anim": "singRIGHT",
+			"loop": true,
 			"fps": 24,
-			"name": "a_bambi right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "a_bambi right"
+		},
+		{
+			"offsets": [90, 80],
+			"indices": [],
+			"fps": 24,
+			"anim": "songDOWN-alt",
+			"loop": false,
+			"name": "a_bambi phone"
 		}
 	],
 	"vocals_file": "",
