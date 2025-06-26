@@ -9,12 +9,12 @@
 
 ### NEXT RELEASE
 - [ ] Add mint to the credits.
-- [x] add Fluffen to the credits
+- [x] add Fluffen to the credits.
+- [ ] *Wavy Backgrounds*
 
 ### FUTURE
 
 - [ ] Add character select screen
 - [ ] Get hxvlc working on Mac
 - [ ] Add Brainfunk Options menu
-- [ ] *Wavy Backgrounds*
 - [ ] Week 6 (Conbi)
