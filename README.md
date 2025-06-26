@@ -14,6 +14,8 @@ READ [THIS](https://github.com/Brainy0789/BrainyEngine/blob/main/KNOWN_ISSUES.md
 
 [Official Discord server](https://discord.gg/2sFz43m4Ka)
 
+[Gamebanana Page](https://gamebanana.com/mods/570256)
+
 ## Installation:
 
 Refer to [the Build Instructions](/docs/BUILDING.md)
