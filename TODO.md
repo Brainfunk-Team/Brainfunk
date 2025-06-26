@@ -4,7 +4,7 @@
 
 - [x] Weeks 0-5
 - [x] Add dialogue for Transformation
-- [X] Remove character select screen, doesn't really work from source because how I wrote it. (MAKE SURE TO MAKE A CHARACTER SELECT SCREEN FROM SOURCE BEFORE THE FIRST RELEASE BUILD COMES OUT!
+- [x] Remove character select screen, doesn't really work from source because how I wrote it. (MAKE SURE TO MAKE A CHARACTER SELECT SCREEN FROM SOURCE BEFORE THE FIRST RELEASE BUILD COMES OUT!
 - [x] Make week banner for Week 4.5
 
 ### NEXT RELEASE
