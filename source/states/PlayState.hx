@@ -35,6 +35,10 @@ import openfl.filters.ShaderFilter;
 
 import shaders.ErrorHandledShader;
 
+import Sys;
+
+
+
 import objects.VideoSprite;
 import objects.Note.EventNote;
 import objects.*;
@@ -246,6 +250,20 @@ class PlayState extends MusicBeatState
 	var keysPressed:Array<Int> = [];
 	var boyfriendIdleTime:Float = 0.0;
 	var boyfriendIdled:Bool = false;
+
+	//mod shit
+	var allowEnd:Bool = false;
+	var dialogue:FlxText;
+	var fade:FlxSprite;
+	var playVideo:Bool = true;
+	var playDialogue:Bool = true;
+	// delmurgium shit
+	var level:Int = 0;
+	var milestone:Int = 5;
+	var milestones:Int = 0;
+	var enemy:Int = 0;
+
+
 
 	// Lua shit
 	public static var instance:PlayState;
@@ -643,6 +661,29 @@ class PlayState extends MusicBeatState
 		splash.alpha = 0.000001; //cant make it invisible or it won't allow precaching
 
 		super.create();
+if (SONG.song.toLowerCase() == "bedtime") {
+    // Use FlxG.camera, but make sure it's anchored to the screen and ignores zoom
+    fade = new FlxSprite();
+    fade.makeGraphic(1280, 720, FlxColor.BLACK); // Match your actual game window resolution
+    fade.scrollFactor.set(0, 0); // Don't scroll with camera
+    fade.cameras = [camHUD]; // Pin it to the HUD so it ignores zoom
+    fade.alpha = 0;
+    add(fade);
+
+    // Set up the dialogue text
+    allowEnd = false;
+    var fontPath:String = Paths.font("vcr.ttf");
+    dialogue = new FlxText(350, 250, 550, "", 50);
+    dialogue.setFormat(fontPath, 50, FlxColor.WHITE, "center");
+    dialogue.scrollFactor.set(0, 0);
+    dialogue.cameras = [camHUD]; // Also pin dialogue to HUD
+    add(dialogue);
+}
+
+
+
+
+
 		Paths.clearUnusedMemory();
 
 		cacheCountdown();
@@ -1042,6 +1083,25 @@ class PlayState extends MusicBeatState
 					case 4:
 						tick = START;
 				}
+
+				if (isStoryMode) {
+        switch (SONG.song.toLowerCase()) {
+            case "bothersome":
+                if (playVideo) {
+                    playVideo = false;
+                    startVideo("mazeCutscene");
+                    return;
+                } else if (playDialogue) {
+                    playDialogue = false;
+                    startDialogue("dialogue", "scaryAmbience");
+                    return;
+                }
+
+            case null:
+
+            case _: 
+        }
+    }
 
 				if(!skipArrowStartTween)
 				{
@@ -1879,6 +1939,71 @@ class PlayState extends MusicBeatState
 			}
 		}
 		#end
+
+if (FlxG.keys.justPressed.SEVEN)
+{
+    inCutscene = true;
+    endSong();
+
+    new FlxTimer().start(0.1, function(tmr:FlxTimer)
+    {
+        switch (PlayState.SONG.song.toLowerCase())
+        {
+            case "bedtime":
+                PlayState.SONG = Song.loadFromJson('lights-out', 'lights-out');
+                StageData.loadDirectory(PlayState.SONG);
+                LoadingState.loadAndSwitchState(new PlayState());
+
+            case "dimensionalized":
+                PlayState.SONG = Song.loadFromJson('lights-out', 'lights-out');
+                StageData.loadDirectory(PlayState.SONG);
+                LoadingState.loadAndSwitchState(new PlayState());
+            case "":
+
+            default:
+                trace("No matching case for this song.");
+        }
+    });
+}
+
+if (FlxG.keys.justPressed.NINE) {
+switch (PlayState.SONG.song.toLowerCase())
+{
+case "delmurgium":
+    
+    {
+level++;
+    var extraInfo:String = "";
+
+    if (level > 3)
+    {
+        extraInfo = "\nSwap Level: " + level + "\nMilestones: " + milestones;
+    }
+
+    if (enemy == 0)
+	{
+	    triggerEvent('Change Character', 'Dad', 'oppositionbambi', Conductor.songPosition);
+	    sendNotification("Bambi", "I AM THE REAL OPPOSITION!" + extraInfo);
+	    enemy = 1;
+	}
+	else
+	{
+	    triggerEvent('Change Character', 'Dad', 'oppositionexpunged', Conductor.songPosition);
+	    sendNotification("Expunged", "Hell no." + extraInfo);
+	    enemy = 0;
+	}
+
+
+    if (level == milestone)
+    {
+        milestones++;
+        sendNotification("MILESTONE", "REACHED SWAP LEVEL " + milestone + "!\nREACHED MILESTONE " + milestones + "!");
+        milestone += 5;
+    }
+    }
+}
+}
+
 
 		setOnScripts('botPlay', cpuControlled);
 		callOnScripts('onUpdatePost', [elapsed]);
@@ -3223,6 +3348,66 @@ class PlayState extends MusicBeatState
 		lastStepHit = curStep;
 		setOnScripts('curStep', curStep);
 		callOnScripts('onStepHit');
+
+switch (SONG.song.toLowerCase()) {
+    case "bedtime":
+        if (curStep == 32 || curStep == 496 || curStep == 1072) {
+            FlxTween.tween(fade, {alpha: 0.7}, 0.1, {ease: FlxEase.linear});
+        }
+
+        if (curStep > 32 && curStep < 64) {
+            dialogue.text = "Tristan, are you\nin bed yet?";
+        } else if (curStep > 64 && curStep < 96) {
+            dialogue.text = "Get to bed now!";
+        } else if (curStep > 96 && curStep < 119) {
+            dialogue.text = "Now's not the time\nfor a rapbattle!";
+        } else if (curStep > 496 && curStep < 511) {
+            dialogue.text = "You're gonna get\ngrounded!";
+        } else if (curStep > 1072 && curStep < 1088) {
+            dialogue.text = "Stop this right\nnow!";
+        } else if (curStep == 119 || curStep == 511 || curStep == 1088) {
+            FlxTween.tween(fade, {alpha: 0}, 0.1, {ease: FlxEase.linear});
+            dialogue.text = "";
+        }
+
+    case "bothersome":
+if (curStep == 1722 || curStep == 1984) {
+                FlxTween.tween(fade, {alpha: 0.7}, 0.1, {ease: FlxEase.linear});
+            }
+
+            if (curStep > 1728 && curStep < 1764) {
+                dialogue.text = "I've gone 3D because of you too many times.";
+            } else if (curStep > 1764 && curStep < 1776) {
+                dialogue.text = "Why do you insist";
+            } else if (curStep > 1776 && curStep < 1797) {
+                dialogue.text = "on rap-battling so much?";
+            } else if (curStep > 1797 && curStep < 1808) {
+                dialogue.text = "I'm done.";
+            } else if (curStep > 1808 && curStep < 1824) {
+                dialogue.text = "Please...";
+            } else if (curStep > 1824 && curStep < 1840) {
+                dialogue.text = "Go...";
+            } else if (curStep > 1987 && curStep < 2000) {
+                dialogue.text = "Please...";
+            } else if (curStep > 2000 && curStep < 2014) {
+                dialogue.text = "Stop...";
+            } else if (curStep > 2014 && curStep < 2025) {
+                dialogue.text = "This...";
+            } else if (curStep > 2025 && curStep < 2036) {
+                dialogue.text = "Song...";
+            } else if (curStep > 2036 && curStep < 2074) {
+                dialogue.text = "I don't like being 3D...";
+            } else if (curStep > 2074 && curStep < 2092) {
+                dialogue.text = "You want to rap-battle?";
+            } else if (curStep > 2092 && curStep < 2110) {
+                dialogue.text = "Let's rap battle, then.";
+            } else if (curStep == 1840 || curStep == 2110) {
+                FlxTween.tween(fade, {alpha: 0}, 0.1, {ease: FlxEase.linear});
+                dialogue.text = "";
+            }
+    default:
+}
+
 	}
 
 	var lastBeatHit:Int = -1;
@@ -3665,4 +3850,24 @@ class PlayState extends MusicBeatState
 		#end
 		return false;
 	}
+
+	function sendNotification(title:String, message:String):Void
+{
+    #if windows
+    Sys.command("powershell", [
+        "-Command",
+        "New-BurntToastNotification -Text '" + title + "', '" + message + "'"
+    ]);
+    #elseif mac
+    Sys.command("osascript", [
+        "-e",
+        'display notification "' + message + '" with title "' + title + '"'
+    ]);
+    #elseif linux
+    Sys.command("notify-send", [title, message]);
+    #else
+    trace(title + ": " + message);
+    #end
+}
+
 }
