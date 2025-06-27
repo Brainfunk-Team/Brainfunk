@@ -7,7 +7,7 @@ function onCreatePost()
         loadGraphic("sprite8", "sky_sunset")
         setProperty("fade.alpha", 0.2)
     else
-        if songName == "Phonebreaker" then
+        if songName == "phonebreaker" then
             loadGraphic("sprite8", "sky_night")
             setProperty("fade.alpha", 0.4)
         else

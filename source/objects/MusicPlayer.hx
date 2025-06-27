@@ -1,371 +1,352 @@
 package objects;
 
+import flixel.FlxG;
 import flixel.group.FlxGroup;
 import flixel.ui.FlxBar;
+import flixel.text.FlxText;
+import flixel.FlxSprite;
+import flixel.util.FlxColor;
 import flixel.util.FlxStringUtil;
-
+import flixel.math.FlxMath;
 import states.FreeplayState;
 
-/**
- * Music player used for Freeplay
- */
 @:access(states.FreeplayState)
-class MusicPlayer extends FlxGroup 
+class MusicPlayer extends FlxGroup
 {
-	public var instance:FreeplayState;
-	public var controls:Controls;
+    public var instance:FreeplayState;
+    public var controls:Controls;
 
-	public var playing(get, never):Bool;
+    public var playing(get, never):Bool;
+    public var playingMusic:Bool = false;
+    public var curTime:Float;
 
-	public var playingMusic:Bool = false;
-	public var curTime:Float;
-
-	var songBG:FlxSprite;
-	var songTxt:FlxText;
-	var timeTxt:FlxText;
-	var progressBar:FlxBar;
+    var songBG:FlxSprite;
+    var songTxt:FlxText;
+    var timeTxt:FlxText;
+    var progressBar:FlxBar;
 	var playbackBG:FlxSprite;
-	var playbackSymbols:Array<FlxText> = [];
-	var playbackTxt:FlxText;
+    var playbackSymbols:Array<FlxText> = [];
+    var playbackTxt:FlxText;
 
-	var wasPlaying:Bool;
+    var wasPlaying:Bool;
+    var holdPitchTime:Float = 0;
+    var playbackRate:Float = 1;
 
-	var holdPitchTime:Float = 0;
-	var playbackRate(default, set):Float = 1;
 
-	public function new(instance:FreeplayState)
-	{
-		super();
+    var hoverTimer:Float = 0;
+    var lastSongIndex:Int = -1;
 
-		this.instance = instance;
-		this.controls = instance.controls;
+    public function new(instance:FreeplayState)
+    {
+        super();
+        this.instance = instance;
+        this.controls = instance.controls;
 
-		var xPos:Float = FlxG.width * 0.7;
+        var xPos = FlxG.width * 0.7;
 
-		songBG = new FlxSprite(xPos - 6, 0).makeGraphic(1, 100, 0xFF000000);
-		songBG.alpha = 0.6;
-		add(songBG);
+        songBG     = new FlxSprite(xPos-6,0).makeGraphic(1,100,0xFF000000);
+        playbackBG = new FlxSprite(xPos-6,0).makeGraphic(1,100,0xFF000000);
+        songBG.alpha = playbackBG.alpha = 0.6;
+        add(songBG);
+        add(playbackBG);
 
-		playbackBG = new FlxSprite(xPos - 6, 0).makeGraphic(1, 100, 0xFF000000);
-		playbackBG.alpha = 0.6;
-		add(playbackBG);
+        songTxt = new FlxText(xPos,5,0,"",32);
+        songTxt.setFormat(Paths.font("vcr.ttf"),32,FlxColor.WHITE,RIGHT);
+        add(songTxt);
 
-		songTxt = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
-		songTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
-		add(songTxt);
+        timeTxt = new FlxText(xPos, songTxt.y+60,0,"",32);
+        timeTxt.setFormat(Paths.font("vcr.ttf"),32,FlxColor.WHITE,RIGHT);
+        add(timeTxt);
 
-		timeTxt = new FlxText(xPos, songTxt.y + 60, 0, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
-		add(timeTxt);
+        for(i in 0...2)
+        {
+            var arrow = new FlxText(0,0,0,"^",32);
+            arrow.setFormat(Paths.font("vcr.ttf"),32,FlxColor.WHITE,CENTER);
+            if(i==1) arrow.flipY = true;
+            arrow.visible = false;
+            playbackSymbols.push(arrow);
+            add(arrow);
+        }
 
-		for (i in 0...2)
-		{
-			var text:FlxText = new FlxText();
-			text.setFormat(Paths.font('vcr.ttf'), 32, FlxColor.WHITE, CENTER);
-			text.text = '^';
-			if (i == 1)
-				text.flipY = true;
-			text.visible = false;
-			playbackSymbols.push(text);
-			add(text);
-		}
+        progressBar = new FlxBar(
+            timeTxt.x, timeTxt.y+timeTxt.height,
+            LEFT_TO_RIGHT, Std.int(timeTxt.width),8,
+            null,"",0,Math.POSITIVE_INFINITY
+        );
+        progressBar.createFilledBar(FlxColor.WHITE,FlxColor.BLACK);
+        add(progressBar);
 
-		progressBar = new FlxBar(timeTxt.x, timeTxt.y + timeTxt.height, LEFT_TO_RIGHT, Std.int(timeTxt.width), 8, null, "", 0, Math.POSITIVE_INFINITY);
-		progressBar.createFilledBar(FlxColor.WHITE, FlxColor.BLACK);
-		add(progressBar);
+        playbackTxt = new FlxText(FlxG.width*0.6,20,0,"",32);
+        playbackTxt.setFormat(Paths.font("vcr.ttf"),32,FlxColor.WHITE);
+        add(playbackTxt);
 
-		playbackTxt = new FlxText(FlxG.width * 0.6, 20, 0, "", 32);
-		playbackTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE);
-		add(playbackTxt);
+        switchPlayMusic();
+    }
 
-		switchPlayMusic();
-	}
+    override public function update(elapsed:Float)
+    {
+        super.update(elapsed);
 
-	override function update(elapsed:Float)
-	{
-		super.update(elapsed);
+        if(FreeplayState.curSelected != lastSongIndex)
+        {
+            lastSongIndex = FreeplayState.curSelected;
+            hoverTimer = 0;
 
-		if (!playingMusic)
-		{
-			return;
-		}
+            if(playingMusic)
+            {
+                playingMusic = false;
+                switchPlayMusic();
+            }
+        }
 
-		var songName:String = instance.songs[FreeplayState.curSelected].songName;
-		if (playing && !wasPlaying)
-			songTxt.text = Language.getPhrase('musicplayer_playing', 'PLAYING: {1}', [songName]);
-		else
-			songTxt.text = Language.getPhrase('musicplayer_paused', 'PLAYING: {1} (PAUSED)', [songName]);
+    if (!playingMusic)
+    {
 
-		//if(FlxG.keys.justPressed.K) trace('Time: ${FreeplayState.vocals.time}, Playing: ${FreeplayState.vocals.playing}');
+        if (FreeplayState.curSelected != lastSongIndex)
+        {
+            lastSongIndex = FreeplayState.curSelected;
+            hoverTimer = 0;
+        }
 
-		if (controls.UI_LEFT_P)
-		{
-			if (playing)
-				wasPlaying = true;
+        else
+        {
+            hoverTimer += elapsed;
+            if (hoverTimer >= 3)
+            {
 
-			pauseOrResume();
+                playingMusic = true;
+                switchPlayMusic();
+                pauseOrResume();    
+            }
+        }
+        return;
+    }
 
-			curTime = FlxG.sound.music.time - 1000;
-			instance.holdTime = 0;
+        if(!playingMusic) return;
 
-			if (curTime < 0)
-				curTime = 0;
+        var name = instance.songs[FreeplayState.curSelected].songName;
+        songTxt.text = playing
+            ? "PLAYING: " + name
+            : "PLAYING: " + name + " (PAUSED)";
 
-			FlxG.sound.music.time = curTime;
-			setVocalsTime(curTime);
-		}
-		if (controls.UI_RIGHT_P)
-		{
-			if (playing)
-				wasPlaying = true;
+        if(controls.UI_LEFT_P || controls.UI_RIGHT_P)
+        {
+            if(playing) wasPlaying = true;
+            pauseOrResume();
+            curTime = FlxG.sound.music.time + (controls.UI_RIGHT_P ? 1000 : -1000);
+            instance.holdTime = 0;
+            curTime = FlxMath.bound(curTime,0,FlxG.sound.music.length);
+            FlxG.sound.music.time = curTime;
+            setVocalsTime(curTime);
+        }
 
-			pauseOrResume();
+        if(controls.UI_LEFT || controls.UI_RIGHT)
+        {
+            instance.holdTime += elapsed;
+            if(instance.holdTime > 0.5)
+                curTime += 40000 * elapsed * (controls.UI_LEFT ? -1 : 1);
+            curTime = FlxMath.bound(curTime,0,FlxG.sound.music.length);
+            FlxG.sound.music.time = curTime;
+            setVocalsTime(curTime);
+        }
 
-			curTime = FlxG.sound.music.time + 1000;
-			instance.holdTime = 0;
+        if(controls.UI_LEFT_R || controls.UI_RIGHT_R)
+        {
+            FlxG.sound.music.time = curTime;
+            setVocalsTime(curTime);
+            if(wasPlaying)
+            {
+                pauseOrResume(true);
+                wasPlaying = false;
+            }
+        }
 
-			if (curTime > FlxG.sound.music.length)
-				curTime = FlxG.sound.music.length;
+        if(controls.UI_UP_P || controls.UI_DOWN_P)
+        {
+            holdPitchTime = 0;
+            playbackRate += (controls.UI_UP_P ? 0.05 : -0.05);
+            setPlaybackRate();
+        }
+        if(controls.UI_UP || controls.UI_DOWN)
+        {
+            holdPitchTime += elapsed;
+            if(holdPitchTime > 0.6)
+            {
+                playbackRate += 0.05 * (controls.UI_UP ? 1 : -1);
+                setPlaybackRate();
+            }
+        }
 
-			FlxG.sound.music.time = curTime;
-			setVocalsTime(curTime);
-		}
+        if(controls.RESET)
+        {
+            playbackRate = 1;
+            setPlaybackRate();
+            FlxG.sound.music.time = 0;
+            setVocalsTime(0);
+        }
 
-		if(controls.UI_LEFT || controls.UI_RIGHT)
-		{
-			instance.holdTime += elapsed;
-			if(instance.holdTime > 0.5)
-			{
-				curTime += 40000 * elapsed * (controls.UI_LEFT ? -1 : 1);
-			}
+        if(playing)
+        {
+            if(FreeplayState.vocals       != null)
+                FreeplayState.vocals.volume = (FreeplayState.vocals.length > FlxG.sound.music.time) ? 0.8 : 0;
+            if(FreeplayState.opponentVocals != null)
+                FreeplayState.opponentVocals.volume = (FreeplayState.opponentVocals.length > FlxG.sound.music.time) ? 0.8 : 0;
 
-			var difference:Float = Math.abs(curTime - FlxG.sound.music.time);
-			if(curTime + difference > FlxG.sound.music.length) curTime = FlxG.sound.music.length;
-			else if(curTime - difference < 0) curTime = 0;
+            if((FreeplayState.vocals != null &&
+                Math.abs(FlxG.sound.music.time - FreeplayState.vocals.time) >= 25) ||
+               (FreeplayState.opponentVocals != null &&
+                Math.abs(FlxG.sound.music.time - FreeplayState.opponentVocals.time) >= 25))
+            {
+                pauseOrResume();
+                setVocalsTime(FlxG.sound.music.time);
+                pauseOrResume(true);
+            }
+        }
 
-			FlxG.sound.music.time = curTime;
-			setVocalsTime(curTime);
-		}
+        positionSong();
+        updateTimeTxt();
+        updatePlaybackTxt();
+    }
 
-		if(controls.UI_LEFT_R || controls.UI_RIGHT_R)
-		{
-			FlxG.sound.music.time = curTime;
-			setVocalsTime(curTime);
+    function setVocalsTime(time:Float):Void
+    {
+        if(FreeplayState.vocals != null && FreeplayState.vocals.length > time)
+            FreeplayState.vocals.time = time;
+        if(FreeplayState.opponentVocals != null && FreeplayState.opponentVocals.length > time)
+            FreeplayState.opponentVocals.time = time;
+    }
 
-			if (wasPlaying)
-			{
-				pauseOrResume(true);
-				wasPlaying = false;
-			}
-		}
-		if (controls.UI_UP_P)
-		{
-			holdPitchTime = 0;
-			playbackRate += 0.05;
-			setPlaybackRate();
-		}
-		else if (controls.UI_DOWN_P)
-		{
-			holdPitchTime = 0;
-			playbackRate -= 0.05;
-			setPlaybackRate();
-		}
-		if (controls.UI_DOWN || controls.UI_UP)
-		{
-			holdPitchTime += elapsed;
-			if (holdPitchTime > 0.6)
-			{
-				playbackRate += 0.05 * (controls.UI_UP ? 1 : -1);
-				setPlaybackRate();
-			}
-		}
-	
-		if (controls.RESET)
-		{
-			playbackRate = 1;
-			setPlaybackRate();
+    public function pauseOrResume(resume:Bool = false):Void
+    {
+        if(resume)
+        {
+            if(!FlxG.sound.music.playing) FlxG.sound.music.resume();
+            if(FreeplayState.vocals != null && !FreeplayState.vocals.playing)       FreeplayState.vocals.resume();
+            if(FreeplayState.opponentVocals != null && !FreeplayState.opponentVocals.playing) FreeplayState.opponentVocals.resume();
+        }
+        else
+        {
+            FlxG.sound.music.pause();
+            if(FreeplayState.vocals        != null) FreeplayState.vocals.pause();
+            if(FreeplayState.opponentVocals != null) FreeplayState.opponentVocals.pause();
+        }
+    }
 
-			FlxG.sound.music.time = 0;
-			setVocalsTime(0);
-		}
+    public function switchPlayMusic():Void
+    {
+        FlxG.autoPause = (!playingMusic && ClientPrefs.data.autoPause);
+        active = visible = playingMusic;
 
-		if (playing)
-		{
-			if(FreeplayState.vocals != null)
-				FreeplayState.vocals.volume = (FreeplayState.vocals.length > FlxG.sound.music.time) ? 0.8 : 0;
-			if(FreeplayState.opponentVocals != null)
-				FreeplayState.opponentVocals.volume = (FreeplayState.opponentVocals.length > FlxG.sound.music.time) ? 0.8 : 0;
+        instance.scoreBG.visible  =
+        instance.diffText.visible =
+        instance.scoreText.visible = !playingMusic;
 
-			if((FreeplayState.vocals != null && FreeplayState.vocals.length > FlxG.sound.music.time && Math.abs(FlxG.sound.music.time - FreeplayState.vocals.time) >= 25) ||
-			(FreeplayState.opponentVocals != null && FreeplayState.opponentVocals.length > FlxG.sound.music.time && Math.abs(FlxG.sound.music.time - FreeplayState.opponentVocals.time) >= 25))
-			{
-				pauseOrResume();
-				setVocalsTime(FlxG.sound.music.time);
-				pauseOrResume(true);
-			}
-		}
+        songTxt.visible     =
+        timeTxt.visible     =
+        songBG.visible      =
+        playbackTxt.visible =
+        playbackBG.visible  =
+        progressBar.visible = playingMusic;
 
-		positionSong();
-		updateTimeTxt();
-		updatePlaybackTxt();
-	}
+        for(sym in playbackSymbols) sym.visible = playingMusic;
 
-	function setVocalsTime(time:Float)
-	{
-		if (FreeplayState.vocals != null && FreeplayState.vocals.length > time)
-			FreeplayState.vocals.time = time;
-		if (FreeplayState.opponentVocals != null && FreeplayState.opponentVocals.length > time)
-			FreeplayState.opponentVocals.time = time;
-	}
+        holdPitchTime = 0;
+        instance.holdTime = 0;
+        playbackRate = 1;
+        setPlaybackRate();
+        updatePlaybackTxt();
 
-	public function pauseOrResume(resume:Bool = false) 
-	{
-		if (resume)
-		{
-			if(!FlxG.sound.music.playing)
-				FlxG.sound.music.resume();
+        if(playingMusic)
+        {
+            instance.bottomText.text = Language.getPhrase(
+              'musicplayer_tip',
+              'Press ESCAPE to Exit / Press R to Reset the Song'
+            );
+            positionSong();
+            progressBar.setRange(0, FlxG.sound.music.length);
+            progressBar.setParent(FlxG.sound.music, "time");
+            progressBar.numDivisions = 1600;
+            updateTimeTxt();
+        }
+        else
+        {
+            progressBar.setRange(0, Math.POSITIVE_INFINITY);
+            progressBar.setParent(null, "");
+            progressBar.numDivisions = 0;
+            instance.bottomText.text = instance.bottomString;
+            instance.positionHighscore();
+        }
+        progressBar.updateBar();
+    }
 
-			if (FreeplayState.vocals != null && FreeplayState.vocals.length > FlxG.sound.music.time && !FreeplayState.vocals.playing)
-				FreeplayState.vocals.resume();
-			if (FreeplayState.opponentVocals != null && FreeplayState.opponentVocals.length > FlxG.sound.music.time && !FreeplayState.opponentVocals.playing)
-				FreeplayState.opponentVocals.resume();
-		}
-		else 
-		{
-			FlxG.sound.music.pause();
+    function updatePlaybackTxt():Void
+    {
+        var s = if(Std.is(playbackRate,Int))
+            Std.string(playbackRate)+".00"
+        else
+        {
+            var t = Std.string(playbackRate);
+            if(t.indexOf(".")>=0 && t.split(".")[1].length<2) t += "0";
+            t;
+        }
+        playbackTxt.text = s + "x";
+    }
 
-			if (FreeplayState.vocals != null)
-				FreeplayState.vocals.pause();
-			if (FreeplayState.opponentVocals != null)
-				FreeplayState.opponentVocals.pause();
-		}
-	}
+    function positionSong():Void
+    {
+        var nm = instance.songs[FreeplayState.curSelected].songName;
+        var len = nm.length;
+        var short = len<5;
 
-	public function switchPlayMusic()
-	{
-		FlxG.autoPause = (!playingMusic && ClientPrefs.data.autoPause);
-		active = visible = playingMusic;
+        songTxt.x = FlxG.width - songTxt.width - 6 - (short ? (10*len - len) : 0);
+        songBG.scale.x = FlxG.width - songTxt.x + 12 + (short ? 6*len : 0);
+        songBG.x = FlxG.width - (songBG.scale.x/2);
 
-		instance.scoreBG.visible = instance.diffText.visible = instance.scoreText.visible = !playingMusic; //Hide Freeplay texts and boxes if playingMusic is true
-		songTxt.visible = timeTxt.visible = songBG.visible = playbackTxt.visible = playbackBG.visible = progressBar.visible = playingMusic; //Show Music Player texts and boxes if playingMusic is true
+        timeTxt.x = Std.int(songBG.x + songBG.width/2) - timeTxt.width/2 - (short ? (len-5) : 0);
 
-		for (i in playbackSymbols)
-			i.visible = playingMusic;
-		
-		holdPitchTime = 0;
-		instance.holdTime = 0;
-		playbackRate = 1;
-		updatePlaybackTxt();
+        playbackBG.scale.x = playbackTxt.width + 30;
+        playbackBG.x = songBG.x - playbackBG.scale.x;
+        playbackTxt.x = playbackBG.x - playbackTxt.width/2;
+        playbackTxt.y = playbackTxt.height;
 
-		if (playingMusic)
-		{
-			instance.bottomText.text = Language.getPhrase('musicplayer_tip', 'Press SPACE to Pause / Press ESCAPE to Exit / Press R to Reset the Song');
-			positionSong();
-			
-			progressBar.setRange(0, FlxG.sound.music.length);
-			progressBar.setParent(FlxG.sound.music, "time");
-			progressBar.numDivisions = 1600;
+        progressBar.setGraphicSize(Std.int(songTxt.width),5);
+        progressBar.y = songTxt.y+songTxt.height+10;
+        progressBar.x = songTxt.x + songTxt.width/2 -15;
+        if(short)
+        {
+            progressBar.scale.x += len/2;
+            progressBar.x -= len-10;
+        }
 
-			updateTimeTxt();
-		}
-		else
-		{
-			progressBar.setRange(0, Math.POSITIVE_INFINITY);
-			progressBar.setParent(null, "");
-			progressBar.numDivisions = 0;
+        for(i in 0...2)
+        {
+            var sym = playbackSymbols[i];
+            sym.x = playbackTxt.x + playbackTxt.width/2 -10;
+            sym.y = playbackTxt.y + (i==0 ? -playbackTxt.height : playbackTxt.height);
+        }
+    }
 
-			instance.bottomText.text = instance.bottomString;
-			instance.positionHighscore();
-		}
-		progressBar.updateBar();
-	}
+    function updateTimeTxt():Void
+    {
+        var t = FlxStringUtil.formatTime(FlxG.sound.music.time/1000,false)
+              + " / "
+              + FlxStringUtil.formatTime(FlxG.sound.music.length/1000,false);
+        timeTxt.text = "< " + t + " >";
+    }
 
-	function updatePlaybackTxt()
-	{
-		var text = "";
-		if (playbackRate is Int)
-			text = playbackRate + '.00';
-		else
-		{
-			var playbackRate = Std.string(playbackRate);
-			if (playbackRate.split('.')[1].length < 2) // Playback rates for like 1.1, 1.2 etc
-				playbackRate += '0';
+    private function setPlaybackRate():Void
+    {
+        var v = FlxMath.roundDecimal(playbackRate,2);
+        if(v>3)      v = 3;
+        else if(v<0.25) v = 0.25;
+        playbackRate = v;
+        FlxG.sound.music.pitch = v;
+        if(FreeplayState.vocals        != null) FreeplayState.vocals.pitch        = v;
+        if(FreeplayState.opponentVocals != null) FreeplayState.opponentVocals.pitch = v;
+    }
 
-			text = playbackRate;
-		}
-		playbackTxt.text = text + 'x';
-	}
-
-	function positionSong() 
-	{
-		var length:Int = instance.songs[FreeplayState.curSelected].songName.length;
-		var shortName:Bool = length < 5; // Fix for song names like Ugh, Guns
-		songTxt.x = FlxG.width - songTxt.width - 6;
-		if (shortName)
-			songTxt.x -= 10 * length - length;
-		songBG.scale.x = FlxG.width - songTxt.x + 12;
-		if (shortName) 
-			songBG.scale.x += 6 * length;
-		songBG.x = FlxG.width - (songBG.scale.x / 2);
-		timeTxt.x = Std.int(songBG.x + (songBG.width / 2));
-		timeTxt.x -= timeTxt.width / 2;
-		if (shortName)
-			timeTxt.x -= length - 5;
-
-		playbackBG.scale.x = playbackTxt.width + 30;
-		playbackBG.x = songBG.x - (songBG.scale.x / 2);
-		playbackBG.x -= playbackBG.scale.x;
-
-		playbackTxt.x = playbackBG.x - playbackTxt.width / 2;
-		playbackTxt.y = playbackTxt.height;
-
-		progressBar.setGraphicSize(Std.int(songTxt.width), 5);
-		progressBar.y = songTxt.y + songTxt.height + 10;
-		progressBar.x = songTxt.x + songTxt.width / 2 - 15;
-		if (shortName)
-		{
-			progressBar.scale.x += length / 2;
-			progressBar.x -= length - 10;
-		}
-
-		for (i in 0...2)
-		{
-			var text = playbackSymbols[i];
-			text.x = playbackTxt.x + playbackTxt.width / 2 - 10;
-			text.y = playbackTxt.y;
-
-			if (i == 0)
-				text.y -= playbackTxt.height;
-			else
-				text.y += playbackTxt.height;
-		}
-	}
-
-	function updateTimeTxt()
-	{
-		var text = FlxStringUtil.formatTime(FlxG.sound.music.time / 1000, false) + ' / ' + FlxStringUtil.formatTime(FlxG.sound.music.length / 1000, false);
-		timeTxt.text = '< ' + text + ' >';
-	}
-
-	function setPlaybackRate() 
-	{
-		FlxG.sound.music.pitch = playbackRate;
-		if (FreeplayState.vocals != null)
-			FreeplayState.vocals.pitch = playbackRate;
-		if (FreeplayState.opponentVocals != null)
-			FreeplayState.opponentVocals.pitch = playbackRate;
-	}
-
-	function get_playing():Bool 
-	{
-		return FlxG.sound.music.playing;
-	}
-
-	function set_playbackRate(value:Float):Float 
-	{
-		var value = FlxMath.roundDecimal(value, 2);
-		if (value > 3) value = 3;
-		else if (value <= 0.25) value = 0.25;
-		return playbackRate = value;
-	}
+    function get_playing():Bool
+    {
+        return FlxG.sound.music.playing;
+    }
 }

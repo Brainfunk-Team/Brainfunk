@@ -8,3 +8,6 @@ school
 schoolEvil
 tank
 eyesky
+farmhouse
+bedroom
+backyard

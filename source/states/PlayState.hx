@@ -256,6 +256,7 @@ class PlayState extends MusicBeatState
 	var milestone:Int = 5;
 	var milestones:Int = 0;
 	var enemy:Int = 0;
+	
 
 
 	// Lua shit
@@ -408,6 +409,9 @@ class PlayState extends MusicBeatState
 			case 'phillyBlazin': new PhillyBlazin();	//Weekend 1 - Blazin
 			case 'redsky': new Redsky();
 			case 'eyesky': new Eyesky();
+			case 'farmhouse': new FarmhouseBambi();
+			case 'bedroom': new Bedroom();
+			case 'backyard': new Backyard();
 		}
 		if(isPixelStage) introSoundsSuffix = '-pixel';
 
