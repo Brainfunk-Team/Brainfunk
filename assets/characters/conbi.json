@@ -1,0 +1,23 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [810, 1160],
+			"anim": "idle",
+			"fps": 24,
+			"name": "conbi",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/conbi",
+	"position": [0, 140],
+	"healthicon": "cone-man",
+	"flip_x": false,
+	"healthbar_colors": [224, 91, 221],
+	"camera_position": [-810, -2710],
+	"sing_duration": 4,
+	"scale": 5,
+	"_editor_isPlayer": false
+}

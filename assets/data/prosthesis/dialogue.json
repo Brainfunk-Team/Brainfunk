@@ -1,0 +1,60 @@
+{
+	"dialogue": [
+		{
+			"expression": "pissed",
+			"text": "WHAT ARE YOU DOING IN MY BACKYARD?",
+			"boxState": "angry",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"expression": "talk",
+			"text": "Beep bop!",
+			"boxState": "normal",
+			"sound": "bf_dialogue",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "Oh, you want to rap battle?",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"expression": "excited",
+			"text": "Bap!",
+			"boxState": "normal",
+			"sound": "bf_dialogue",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "I don't see why not!",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"expression": "excited",
+			"text": "Let's do this!",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"sound": "bf_dialogue",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Bap!"
+		}
+	]
+}

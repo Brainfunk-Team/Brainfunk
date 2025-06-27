@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dave.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="dave_annoyed0000" x="1112" y="588" width="192" height="294" frameX="2" frameY="2" frameWidth="188" frameHeight="290"/>
+	<SubTexture name="dave_erm0000" x="192" y="946" width="191" height="294" frameX="2" frameY="2" frameWidth="187" frameHeight="290"/>
+	<SubTexture name="dave_happy0000" x="1112" y="294" width="192" height="294" frameX="2" frameY="2" frameWidth="188" frameHeight="290"/>
+	<SubTexture name="dave_furious0000" x="460" y="616" width="251" height="294" frameX="2" frameY="2" frameWidth="247" frameHeight="290"/>
+	<SubTexture name="dave_3d_scared0000" x="312" y="0" width="310" height="346" frameX="2" frameY="2" frameWidth="306" frameHeight="342"/>
+	<SubTexture name="dave_postMaze0000" x="1112" y="0" width="200" height="294" frameX="2" frameY="2" frameWidth="196" frameHeight="290"/>
+	<SubTexture name="dave_shocked0000" x="711" y="616" width="251" height="294" frameX="2" frameY="2" frameWidth="247" frameHeight="290"/>
+	<SubTexture name="dave_splitathon0000" x="0" y="946" width="192" height="294" frameX="2" frameY="2" frameWidth="188" frameHeight="290"/>
+	<SubTexture name="dave_phone0000" x="0" y="348" width="381" height="268" frameX="-35" frameY="-84" frameWidth="414" frameHeight="350"/>
+	<SubTexture name="dave_festival_exhausted0000" x="882" y="0" width="230" height="330" frameX="2" frameY="2" frameWidth="226" frameHeight="326"/>
+	<SubTexture name="dave_3d_festival0000" x="622" y="0" width="260" height="346" frameX="-24" frameY="2" frameWidth="306" frameHeight="342"/>
+	<SubTexture name="dave_festival_happy0000" x="0" y="616" width="230" height="330" frameX="2" frameY="2" frameWidth="226" frameHeight="326"/>
+	<SubTexture name="dave_festival_tired0000" x="230" y="616" width="230" height="330" frameX="2" frameY="2" frameWidth="226" frameHeight="326"/>
+	<SubTexture name="glitched0000" x="0" y="0" width="312" height="348" frameX="2" frameY="2" frameWidth="308" frameHeight="344"/>
+</TextureAtlas>

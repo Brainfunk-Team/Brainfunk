@@ -1,0 +1,63 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [0, 150],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [9, 158],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [66, 172],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-21, 0],
+			"anim": "scared",
+			"fps": 24,
+			"name": "scared",
+			"indices": []
+		},
+		{
+			"offsets": [16, 147],
+			"loop": true,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"offsets": [2, 153],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "left"
+		}
+	],
+	"vocals_file": "dave",
+	"no_antialiasing": false,
+	"image": "characters/dave_insanity_lol",
+	"position": [0, 190],
+	"healthicon": "dave-annoyed",
+	"flip_x": false,
+	"healthbar_colors": [15, 95, 255],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

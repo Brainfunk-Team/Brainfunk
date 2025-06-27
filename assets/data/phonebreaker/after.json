@@ -1,0 +1,164 @@
+{
+	"dialogue": [
+		{
+			"expression": "angey",
+			"text": "I'M GOING TO FUCKING KILL YOU!!!!!!!",
+			"boxState": "angry",
+			"portrait": "bambi",
+			"speed": 0.05,
+			"sound": "bambi_dialogue"
+		},
+		{
+			"expression": "shocked",
+			"text": "Bap!",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05,
+			"sound": "bf_dialogue"
+		},
+		{
+			"expression": "talk",
+			"text": "Dave comes out of the clearing.",
+			"boxState": "normal",
+			"portrait": "nobody",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "confused",
+			"text": "What is going on here?",
+			"boxState": "normal",
+			"portrait": "dave",
+			"speed": 0.05,
+			"sound": "dave_dialogue"
+		},
+		{
+			"expression": "angey",
+			"text": "THEY BREAK MY PHONE!!!!!!!!!!!!!!",
+			"boxState": "angry",
+			"portrait": "bambi",
+			"speed": 0.05,
+			"sound": "bambi_dialogue"
+		},
+		{
+			"expression": "confused",
+			"text": "We didn't break your-",
+			"boxState": "normal",
+			"portrait": "vsdavegf",
+			"speed": 0.05,
+			"sound": "gf_dialogue"
+		},
+		{
+			"expression": "angey",
+			"text": "YES, YOU DID!!!!!! I THREW AT THE\\nBLUE-HAIRED GUY AND IT BROKE!!!!!!!",
+			"boxState": "angry",
+			"portrait": "bambi",
+			"speed": 0.05,
+			"sound": "bambi_dialogue"
+		},
+		{
+			"expression": "bruh",
+			"text": "I should have expected this. Bambi, you need to stop doing this.",
+			"boxState": "normal",
+			"portrait": "dave",
+			"speed": 0.05,
+			"sound": "dave_dialogue"
+		},
+		{
+			"expression": "pissed",
+			"text": "BUT! HOW DO I KNOW TO TRUST PEOPLE!!! SOME PEOPLE WILL STEAL MY CORN!!!!!!!!!",
+			"boxState": "normal",
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "bambi"
+		},
+		{
+			"expression": "bruh",
+			"text": "Shut up. I invited them over for a picnic. I invited you too. Did you not see the text?",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"expression": "pissed",
+			"text": "MY PHONE IS BROKEN!!",
+			"boxState": "normal",
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "bambi"
+		},
+		{
+			"expression": "bruh",
+			"text": "...",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.2,
+			"portrait": "dave"
+		},
+		{
+			"expression": "pissed",
+			"text": "Can I still be in the picnic? I'll bring corn.",
+			"boxState": "normal",
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "bambi"
+		},
+		{
+			"expression": "talk",
+			"text": "Yeah, I already invited you in the first place.",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"expression": "talk",
+			"text": "Anyways, everybody ready for the picnic?",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		},
+		{
+			"expression": "excited",
+			"text": "Bap!",
+			"boxState": "normal",
+			"sound": "bf_dialogue",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "Sure!",
+			"boxState": "normal",
+			"sound": "gf_dialogue",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "talk",
+			"text": "I guess...",
+			"boxState": "normal",
+			"sound": "bambi_dialogue",
+			"speed": 0.05,
+			"portrait": "bambi"
+		},
+		{
+			"expression": "content",
+			"text": "Yippee!",
+			"boxState": "normal",
+			"sound": "tristan_dialogue",
+			"speed": 0.05,
+			"portrait": "tristan"
+		},
+		{
+			"expression": "talk",
+			"text": "Let's get this started!",
+			"boxState": "normal",
+			"sound": "dave_dialogue",
+			"speed": 0.05,
+			"portrait": "dave"
+		}
+	]
+}

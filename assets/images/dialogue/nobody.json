@@ -1,0 +1,38 @@
+{
+	"position": [
+		0,
+		-60
+	],
+	"dialogue_pos": "center",
+	"no_antialiasing": true,
+	"scale": 1.25,
+	"image": "nobody",
+	"animations": [
+		{
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "talk",
+			"idle_name": "talk",
+			"loop_name": "talk"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "smile",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "smile",
+			"idle_name": "smile"
+		}
+	]
+}
