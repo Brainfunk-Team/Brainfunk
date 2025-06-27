@@ -2,9 +2,9 @@
 <TextureAtlas imagePath="midsongDialogueEditor.png">
 	<!-- Created using the Spritesheet and XML generator -->
 	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="default0000" x="68" y="0" width="68" height="68" frameX="2" frameY="2" frameWidth="64" frameHeight="64"/>
-	<SubTexture name="text0000" x="136" y="0" width="68" height="68" frameX="2" frameY="2" frameWidth="64" frameHeight="64"/>
-	<SubTexture name="fade0000" x="0" y="0" width="68" height="68" frameX="2" frameY="2" frameWidth="64" frameHeight="64"/>
-	<SubTexture name="length0000" x="0" y="68" width="68" height="28" frameX="2" frameY="-18" frameWidth="64" frameHeight="64"/>
-	<SubTexture name="length-edge0000" x="68" y="68" width="16" height="28" frameX="2" frameY="-18" frameWidth="64" frameHeight="64"/>
+	<SubTexture name="default0000" x="64" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+	<SubTexture name="text0000" x="0" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+	<SubTexture name="fade0000" x="128" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+	<SubTexture name="length0000" x="0" y="64" width="64" height="24" frameX="0" frameY="-20" frameWidth="64" frameHeight="64"/>
+	<SubTexture name="length-edge0000" x="64" y="64" width="12" height="24" frameX="0" frameY="-20" frameWidth="64" frameHeight="64"/>
 </TextureAtlas>
