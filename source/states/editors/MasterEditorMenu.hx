@@ -132,6 +132,8 @@ class MasterEditorMenu extends MusicBeatState
 					Lib.application.window.focus();
 					Lib.application.window.alert("An unknown error occured.\nPlease, do not report this error.", "Error");
 					Lib.application.window.close();
+				case 'Midsong Dialogue Editor':
+					LoadingState.loadAndSwitchState(new MidsongEditorState(), false);
 			}
 			FlxG.sound.music.volume = 0;
 			FreeplayState.destroyFreeplayVocals();

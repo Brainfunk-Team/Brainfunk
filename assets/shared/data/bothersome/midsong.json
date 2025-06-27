@@ -1,0 +1,17 @@
+{
+    "dialogue": [
+        {
+            "text": "Hello!",
+            "startStep": 8,
+            "endStep": 16
+        }
+    ],
+
+    "fade": [
+        {
+            "startStep": 7,
+            "endStep": 17,
+            "fadeTime": 0.1
+        }
+    ]
+}
