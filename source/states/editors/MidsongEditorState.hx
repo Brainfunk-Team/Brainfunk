@@ -13,7 +13,7 @@ import states.editors.content.Prompt;
 import flixel.FlxG;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import paths.Paths;
+import backend.Paths;
 
 class MidsongEditorState extends MusicBeatState implements PsychUIEvent
 {
@@ -37,6 +37,7 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
     var loadButton:PsychUIButton;
     var newEventButton:PsychUIButton;
     var songPlaying:Bool = false;
+    var events:Array<FlxSprite>;
 
     override function create():Void
     {
@@ -68,15 +69,6 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         add(currentText);
 
         FlxG.mouse.visible = true;
-
-        box.addEventHandler(this);
-        box2.addEventHandler(this);
-        textInput.addEventHandler(this);
-        songInput.addEventHandler(this);
-        reloadSongButton.addEventHandler(this);
-        saveButton.addEventHandler(this);
-        loadButton.addEventHandler(this);
-        newEventButton.addEventHandler(this);
     }
 
     override function update(elapsed:Float):Void
