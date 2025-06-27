@@ -39,6 +39,8 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
     var songPlaying:Bool = false;
     var events:Array<FlxSprite>;
 
+    var playhead:FlxSprite;
+
     override function create():Void
     {
         super.create();
@@ -52,6 +54,9 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         saveButton       = new PsychUIButton(FlxG.width-300, FlxG.height-200, "Save JSON", null, 80, 20);
         loadButton       = new PsychUIButton(FlxG.width-300, FlxG.height-180, "Load JSON", null, 80, 22);
         newEventButton   = new PsychUIButton(FlxG.width-300, FlxG.height-160, "New Event", null, 80, 24);
+
+
+        events = [];
 
         currentText = new FlxText(0, 0, FlxG.width, emptyString);
         currentText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, "center");
