@@ -3743,22 +3743,24 @@ level++;
 	}
 
 	function sendNotification(title:String, message:String):Void
-{
-    #if windows
-    Sys.command("powershell", [
-        "-Command",
-        "New-BurntToastNotification -Text '" + title + "', '" + message + "'"
-    ]);
-    #elseif mac
-    Sys.command("osascript", [
-        "-e",
-        'display notification "' + message + '" with title "' + title + '"'
-    ]);
-    #elseif linux
-    Sys.command("notify-send", [title, message]);
-    #else
-    trace(title + ": " + message);
-    #end
-}
+	{
+		#if windows
+		Sys.command("powershell", [
+			"-Command",
+			"New-BurntToastNotification -Text '" + title + "', '" + message + "'"
+		]);
+		#elseif mac
+		Sys.command("osascript", [
+			"-e",
+			'display notification "' + message + '" with title "' + title + '"'
+		]);
+		#elseif linux
+		Sys.command("notify-send", [title, message]);
+		#else
+		trace(title + ": " + message);
+		var notifText:FlxText = new FlxText(0, 0, FlxG.width, title + "\n" + message);
+		notifText.setFormat("assets/fonts/vcr.ttf", 18, FlxColor.WHITE, "left");
+		#end
+	}
 
 }
