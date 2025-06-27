@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="cheating.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="talk0000" x="440" y="0" width="338" height="556" frameX="-141" frameY="-87" frameWidth="669" frameHeight="696"/>
-	<SubTexture name="smile0000" x="0" y="0" width="440" height="567" frameX="-126" frameY="-75" frameWidth="693" frameHeight="696"/>
-</TextureAtlas>

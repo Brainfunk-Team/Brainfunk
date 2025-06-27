@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="tristan.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="content0000" x="0" y="295" width="258" height="295" frameX="2" frameY="2" frameWidth="256" frameHeight="291"/>
-	<SubTexture name="festival0000" x="546" y="0" width="258" height="295" frameX="2" frameY="2" frameWidth="256" frameHeight="291"/>
-	<SubTexture name="irritated0000" x="288" y="0" width="258" height="295" frameX="2" frameY="2" frameWidth="256" frameHeight="291"/>
-	<SubTexture name="sad0000" x="0" y="0" width="288" height="295" frameX="2" frameY="2" frameWidth="288" frameHeight="291"/>
-</TextureAtlas>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="vs_dave_gf.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="gf_cheer0000" x="0" y="0" width="242" height="263" frameX="-229" frameY="-9" frameWidth="480" frameHeight="270"/>
-	<SubTexture name="gf_confused0000" x="242" y="0" width="239" height="250" frameX="-237" frameY="-22" frameWidth="480" frameHeight="270"/>
-	<SubTexture name="gf_happy0000" x="0" y="263" width="239" height="250" frameX="-237" frameY="-22" frameWidth="480" frameHeight="270"/>
-	<SubTexture name="gf_what0000" x="481" y="0" width="239" height="250" frameX="-237" frameY="-22" frameWidth="480" frameHeight="270"/>
-</TextureAtlas>
