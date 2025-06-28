@@ -42,8 +42,8 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
 
     var playhead:FlxSprite;
 
-    var events:Array<FlxSprite>;
-    var eventsData:Array<Array<Float>>;
+    var events:Array<FlxSprite> = new Array<FlxSprite>();
+    var eventsData:Array<Array<Float>> = new Array<Array<Float>>;
 
     var curEvent:Int;
 
@@ -95,15 +95,45 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         if (FlxG.keys.justPressed.SHIFT) { }
     }
 
-    function createEvent(type:Float, step:Float, length:Int, data:Float):Int //Return event index
+    function createEvent(type:Float, step:Float, length:Int, data:Float):Int //Returns event index
     {
-        events.push(new FlxSprite(0, FlxG.height/2));
+        events.push(new FlxSprite(0, 128));
         eventsData.push([type, step, length, data]);
         events[events.length-1].loadGraphic(Paths.getSharedPath("images/editors/midsongDialogueEditor"));
         add(events[events.length-1]);
         return events.length-1;
     }
 
+    function saveFile(name:String):Void
+    {
+        for (i in 0...text.length) {
+            dialogue.push({
+                text: text[i],
+                startStep: stepStart[i],
+                endStep: stepEnd[i]
+            });
+        }
+        
+        for (i in 0...fadeStepStart.length) {
+            fade.push({
+                startStep: fadeStepStart[i],
+                endStep: fadeStepEnd[i],
+                fadeTime: fadeTime[i]
+            });
+        }
+        
+        var midsongData = { dialogue: dialogue, fade: fade };
+        var jsonStr:String = Json.stringify(midsongData, "\t");
+        var fileRef:FileReference = new FileReference();
+        fileRef.save(jsonStr, name);
+    }
+
+    function loadFile():String
+    {
+        //WORK IN PROGRESS, MAKE SURE IT RETURNS A STRING
+
+        return null;
+    }
 
     public function UIEvent(id:String, sender:Dynamic):Void
     {
@@ -122,27 +152,10 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
                 trace("Clicked reload!");
             }
             if (sender == saveButton) {
-                for (i in 0...text.length) {
-                    dialogue.push({
-                        text: text[i],
-                        startStep: stepStart[i],
-                        endStep: stepEnd[i]
-                    });
-                }
-                for (i in 0...fadeStepStart.length) {
-                    fade.push({
-                        startStep: fadeStepStart[i],
-                        endStep: fadeStepEnd[i],
-                        fadeTime: fadeTime[i]
-                    });
-                }
-                var midsongData = { dialogue: dialogue, fade: fade };
-                var jsonStr:String = Json.stringify(midsongData, "\t");
-                var fileRef:FileReference = new FileReference();
-                fileRef.save(jsonStr, "midsong.json");
+                saveFile("midsong.json");
             }
             if (sender == loadButton) {
-                // this is for you to do brainy
+                var curDataString:String = loadFile();
             }
             if (sender == newEventButton) {
                 curEvent = createEvent(0, 0, 0, 0);
