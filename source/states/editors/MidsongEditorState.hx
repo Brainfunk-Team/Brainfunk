@@ -20,7 +20,7 @@ import backend.Paths;
 class MidsongEditorState extends MusicBeatState implements PsychUIEvent
 {
     var tip:String =    "Press Shift to select an event.\n" +
-                        "Press Escape to exit."
+                        "Press Escape to exit.";
     var tipText:FlxText;
     var emptyString:String = "(Empty!)";
     var text:Array<String> = [""];
