@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300" height="300" src="https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1">
+  <img width="450" src="https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1">
 </p>
 
 # BrainyEngine
