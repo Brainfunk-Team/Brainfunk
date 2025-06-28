@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500" height="500" src="https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1">
+  <img width="300" height="300" src="https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1">
 </p>
 
 # BrainyEngine
@@ -21,8 +21,6 @@ READ [THIS](https://github.com/Brainy0789/BrainyEngine/blob/main/KNOWN_ISSUES.md
 Refer to [the Build Instructions](/docs/BUILDING.md)
 
 # PSYCH ENGINE DESCRIPTION
-
-![PsychionalEngineLogo](docs/img/PsychEngineLogoTweak.png)
 
 Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier alternative to newbie coders.
 
