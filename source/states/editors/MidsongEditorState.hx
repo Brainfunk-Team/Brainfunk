@@ -67,9 +67,9 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         currentText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.RED, "center");
         currentText.screenCenter(XY);
 
-        tipText = new FlxText(0, 0, FlxG.width, tip);
-        tipText.x = 0
-        tipText.y = FlxG.Height
+        tipText = new FlxText(0, 0, 0, tip);
+        tipText.x = 0;
+        tipText.y = FlxG.Height - tipText.width;
         tipText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.RED, "left");
     
         playhead = new FlxSprite(FlxG.width/2, FlxG.height-128);
