@@ -45,7 +45,7 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
     var playhead:FlxSprite;
 
     var events:Array<FlxSprite> = new Array<FlxSprite>();
-    var eventsData:Array<Array<Float>> = new Array<Array<Float>>;
+    var eventsData:Array<Array<Float>> = new Array<Array<Float>>();
 
     var curEvent:Int;
 
@@ -69,7 +69,7 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
 
         tipText = new FlxText(0, 0, 0, tip);
         tipText.x = 0;
-        tipText.y = FlxG.Height - tipText.width;
+        tipText.y = FlxG.height - tipText.width;
         tipText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.RED, "left");
     
         playhead = new FlxSprite(FlxG.width/2, FlxG.height-128);
