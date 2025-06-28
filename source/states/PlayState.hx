@@ -418,7 +418,7 @@ class PlayState extends MusicBeatState
 			case 'farmhouse': new FarmhouseBambi();
 			case 'farm-nightt': new FarmNight();
 			case 'bedroom': new Bedroom();
-			case 'backyard': new Backyard();
+			case 'backyaard': new Backyard();
 		}
 		if(isPixelStage) introSoundsSuffix = '-pixel';
 
