@@ -37,9 +37,13 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
     var loadButton:PsychUIButton;
     var newEventButton:PsychUIButton;
     var songPlaying:Bool = false;
-    var events:Array<FlxSprite>;
 
     var playhead:FlxSprite;
+
+    var events:Array<FlxSprite>;
+    var eventsData:Array<Array<Float>>;
+
+    var curEvent:Int;
 
     override function create():Void
     {
@@ -55,13 +59,13 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         loadButton       = new PsychUIButton(FlxG.width-300, FlxG.height-180, "Load JSON", null, 80, 22);
         newEventButton   = new PsychUIButton(FlxG.width-300, FlxG.height-160, "New Event", null, 80, 24);
 
-
-        events = [];
-
         currentText = new FlxText(0, 0, FlxG.width, emptyString);
         currentText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, "center");
         currentText.screenCenter(XY);
         currentText.color = FlxColor.RED;
+
+        playhead = new FlxSprite(FlxG.width/2, FlxG.height-128);
+        playhead.loadGraphic(Paths.getSharedPath("images/editors/playhead.png"));
 
         add(box);
         add(box2);
@@ -72,6 +76,7 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         add(newEventButton);
         add(reloadSongButton);
         add(currentText);
+        add(playhead);
 
         FlxG.mouse.visible = true;
     }
@@ -87,6 +92,16 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         if (FlxG.keys.justPressed.SPACE) { }
         if (FlxG.keys.justPressed.SHIFT) { }
     }
+
+    function createEvent(type:Float, step:Float, length:Int, data:Float):Int //Return event index
+    {
+        events.push(new FlxSprite(0, FlxG.height/2));
+        eventsData.push([type, step, length, data]);
+        events[events.length-1].loadGraphic(Paths.getSharedPath("images/editors/midsongDialogueEditor"));
+        add(events[events.length-1]);
+        return events.length-1;
+    }
+
 
     public function UIEvent(id:String, sender:Dynamic):Void
     {
@@ -128,7 +143,7 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
                 // this is for you to do brainy
             }
             if (sender == newEventButton) {
-                // this aswell
+                curEvent = createEvent(0, 0, 0, 0);
             }
         }
     }
