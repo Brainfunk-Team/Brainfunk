@@ -7,6 +7,8 @@ import flixel.util.FlxColor;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import states.PlayState;
+import backend.StageData;
+import backend.StageData.LoadFilters;
 
 class FarmhouseBambi extends BaseStage
 {
@@ -23,60 +25,59 @@ class FarmhouseBambi extends BaseStage
     override public function create():Void
     {
         super.create();
-        FlxG.camera.bgColor = 0xff000000;
+        FlxG.camera.bgColor = 0xFFFFFFFF;
 
-        // Stage elements
-        sky = new BGSprite("sky", -736, -717);
-        sky.scrollFactor.set(0.1, 0.1);
-        add(sky);
+        if (StageData.validateVisibility(3))
+        {
+            sky = new BGSprite("sky", -736, -717);
+            sky.scrollFactor.set(0.1, 0.1);
+            add(sky);
 
-        flatGrass = new BGSprite("farm/gm_flatgrass", -259, -66);
-        flatGrass.scrollFactor.set(1, 1);
-        add(flatGrass);
+            flatGrass = new BGSprite("farm/gm_flatgrass", -259, -66);
+            flatGrass.scrollFactor.set(1, 1);
+            add(flatGrass);
 
-        farmhouse = new BGSprite("farm/funfarmhouse", -202, -140);
-        farmhouse.scrollFactor.set(1, 1);
-        add(farmhouse);
+            farmhouse = new BGSprite("farm/funfarmhouse", -202, -140);
+            farmhouse.scrollFactor.set(1, 1);
+            add(farmhouse);
 
-        grassLands = new BGSprite("farm/grass lands", -737, 326);
-        grassLands.scrollFactor.set(1, 1);
-        grassLands.scale.set(1.1, 2.2);
-        grassLands.updateHitbox();
-        add(grassLands);
+            grassLands = new BGSprite("farm/grass lands", -737, 326);
+            grassLands.scrollFactor.set(1, 1);
+            grassLands.scale.set(1.1, 2.2);
+            grassLands.updateHitbox();
+            add(grassLands);
 
-        cornFence2 = new BGSprite("farm/cornFence2", 872, 117);
-        cornFence2.scrollFactor.set(1, 1);
-        add(cornFence2);
+            cornFence2 = new BGSprite("farm/cornFence2", 872, 117);
+            cornFence2.scrollFactor.set(1, 1);
+            add(cornFence2);
 
-        cornFence = new BGSprite("farm/cornFence", -431, 145);
-        cornFence.scrollFactor.set(1, 1);
-        add(cornFence);
+            cornFence = new BGSprite("farm/cornFence", -431, 145);
+            cornFence.scrollFactor.set(1, 1);
+            add(cornFence);
 
-        sign = new BGSprite("farm/sign", -90, 358);
-        sign.scrollFactor.set(1, 1);
-        add(sign);
+            sign = new BGSprite("farm/sign", -90, 358);
+            sign.scrollFactor.set(1, 1);
+            add(sign);
 
-        cornBag = new BGSprite("farm/cornbag", 1118, 531);
-        cornBag.scrollFactor.set(1, 1);
-        add(cornBag);
+            cornBag = new BGSprite("farm/cornbag", 1118, 531);
+            cornBag.scrollFactor.set(1, 1);
+            add(cornBag);
 
-        // Set all alphas to fully visible
-        for (sprite in [sky, flatGrass, farmhouse, grassLands, cornFence2, cornFence, sign, cornBag]) {
-            sprite.antialiasing = true;
-            sprite.color = FlxColor.WHITE;
-            sprite.alpha = 1;
+            for (sprite in [sky, flatGrass, farmhouse, grassLands, cornFence2, cornFence, sign, cornBag]) {
+                sprite.antialiasing = true;
+                sprite.alpha = 1;
+                sprite.color = FlxColor.fromRGB(255, 255, 255); 
+            }
+            var fadeOverlay = new FlxSprite(-1440, -680);
+            fadeOverlay.makeGraphic(10000, 10000, FlxColor.BLACK);
+            fadeOverlay.scrollFactor.set(0, 0);
+            fadeOverlay.alpha = 0;
+            add(fadeOverlay);
         }
-
-        // Fade overlay (optional)
-        var fadeOverlay = new FlxSprite(-1440, -680);
-        fadeOverlay.makeGraphic(10000, 10000, FlxColor.BLACK);
-        fadeOverlay.scrollFactor.set(0, 0);
-        fadeOverlay.alpha = 0.4;
-        add(fadeOverlay);
 
         if (PlayState.instance != null)
         {
-            PlayState.instance.defaultCamZoom = 1;
+            PlayState.instance.defaultCamZoom = 0.8;
             PlayState.instance.camZooming = true;
             PlayState.instance.cameraSpeed = 1;
         }

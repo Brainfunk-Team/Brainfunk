@@ -89,7 +89,14 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 			"What should the Time Bar display?",
 			'timeBarType',
 			STRING,
-			['Time Left', 'Time Elapsed', 'Song Name', 'Time Left + Song Name', 'Time Elapsed + Song Name', 'Disabled']);
+			['Disabled']);
+		addOption(option);
+
+		var option:Option = new Option('FPS Bar:',
+			"What should the FPS Bar display?",
+			'timeBarType',
+			STRING,
+			['Disabled', 'Enabled', 'Enabled + Memory', 'Enabled + Extra']);
 		addOption(option);
 
 		var option:Option = new Option('Flashing Lights',

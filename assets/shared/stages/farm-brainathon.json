@@ -1,0 +1,460 @@
+{
+	"camera_boyfriend": [
+		-150,
+		0
+	],
+	"preload": {
+		"images/stageback": 3,
+		"images/stagefront": 3,
+		"images/stagecurtains": 2,
+		"images/stage_light": 2
+	},
+	"_editorMeta": {
+		"boyfriend": "bf",
+		"dad": "splitathon-dave",
+		"gf": "gf"
+	},
+	"boyfriend": [
+		910,
+		200
+	],
+	"stageUI": "",
+	"girlfriend": [
+		400,
+		130
+	],
+	"objects": [
+		{
+			"x": -736,
+			"y": -272,
+			"scale": [
+				1,
+				1
+			],
+			"image": "sky_night",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite8",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				0.1,
+				0.1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -259,
+			"y": -16,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/gm_flatgrass",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite6",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -202,
+			"y": -140,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/funfarmhouse",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite5",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -737,
+			"y": 326,
+			"scale": [
+				1.1,
+				2.2
+			],
+			"image": "farm/grass lands",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite1",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": 872,
+			"y": 117,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/cornFence2",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite3",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -431,
+			"y": 145,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/cornFence",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite2",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -90,
+			"y": 358,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/sign",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite7",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": 1284,
+			"y": 625,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/picnic_towel_thing",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite10",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": 1118,
+			"y": 531,
+			"scale": [
+				1,
+				1
+			],
+			"image": "farm/cornbag",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "sprite4",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"type": "sprite"
+		},
+		{
+			"x": -324,
+			"y": 323,
+			"scale": [
+				1,
+				1
+			],
+			"image": "characters/Splitathon_Dave",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "dave",
+			"firstAnimation": "bruh",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 0,
+			"animations": [
+				{
+					"offsets": [
+						-17,
+						0
+					],
+					"loop": true,
+					"fps": 24,
+					"anim": "bruh",
+					"indices": [],
+					"name": "bruh"
+				},
+				{
+					"offsets": null,
+					"loop": true,
+					"fps": 24,
+					"anim": "happy",
+					"indices": [],
+					"name": "happy"
+				},
+				{
+					"offsets": null,
+					"loop": true,
+					"fps": 24,
+					"anim": "idle",
+					"indices": [],
+					"name": "idle"
+				}
+			],
+			"type": "animatedSprite"
+		},
+		{
+			"x": -313,
+			"y": 553,
+			"scale": [
+				1,
+				1
+			],
+			"image": "characters/Splitathon_Bambi",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "bambi",
+			"firstAnimation": "um",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"animations": [
+				{
+					"offsets": null,
+					"loop": true,
+					"fps": 24,
+					"anim": "idle",
+					"indices": [],
+					"name": "splitathon idle"
+				},
+				{
+					"offsets": [
+						-32,
+						1
+					],
+					"loop": true,
+					"fps": 24,
+					"anim": "um",
+					"indices": [],
+					"name": "splitathon um"
+				},
+				{
+					"offsets": [
+						-29,
+						7
+					],
+					"loop": true,
+					"fps": 24,
+					"anim": "corn",
+					"indices": [],
+					"name": "splitathon corn"
+				}
+			],
+			"type": "animatedSprite"
+		},
+		{
+			"type": "gf"
+		},
+		{
+			"type": "dad"
+		},
+		{
+			"x": 1326,
+			"y": 305,
+			"scale": [
+				1,
+				1
+			],
+			"image": "characters/Splitathon_Dave",
+			"flipX": true,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "dave2",
+			"firstAnimation": "happy",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 0,
+			"animations": [
+				{
+					"offsets": null,
+					"indices": [],
+					"fps": 24,
+					"anim": "happy",
+					"loop": true,
+					"name": "happy"
+				}
+			],
+			"type": "animatedSprite"
+		},
+		{
+			"x": 1399,
+			"y": 480,
+			"scale": [
+				0.8,
+				0.8
+			],
+			"image": "bedroom/TristanSitting",
+			"flipX": false,
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "tristan",
+			"firstAnimation": "idle",
+			"antialiasing": true,
+			"flipY": false,
+			"scroll": [
+				1,
+				1
+			],
+			"alpha": 1,
+			"animations": [
+				{
+					"offsets": null,
+					"loop": true,
+					"fps": 24,
+					"anim": "idle",
+					"indices": [],
+					"name": "daytime"
+				}
+			],
+			"type": "animatedSprite"
+		},
+		{
+			"type": "boyfriend"
+		},
+		{
+			"x": -1440,
+			"y": -680,
+			"scale": [
+				10000,
+				10000
+			],
+			"filters": 3,
+			"color": "000000",
+			"angle": 0,
+			"name": "fade",
+			"scroll": [
+				0,
+				0
+			],
+			"alpha": 0.4,
+			"type": "square"
+		},
+		{
+			"x": -280,
+			"y": -180,
+			"scale": [
+				1850,
+				1250
+			],
+			"filters": 3,
+			"color": "FFFFFF",
+			"angle": 0,
+			"name": "whitefade",
+			"scroll": [
+				0,
+				0
+			],
+			"alpha": 0,
+			"type": "square"
+		}
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"defaultZoom": 0.7,
+	"opponent": [
+		80,
+		195
+	],
+	"directory": "",
+	"camera_speed": 1,
+	"hide_girlfriend": false,
+	"camera_opponent": [
+		150,
+		0
+	]
+}

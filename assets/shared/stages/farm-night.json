@@ -3,26 +3,27 @@
 		-150,
 		0
 	],
-	"preload": {
-		"images/stageback": 3,
-		"images/stagefront": 3,
-		"images/stagecurtains": 2,
-		"images/stage_light": 2
-	},
 	"_editorMeta": {
 		"boyfriend": "bf",
-		"dad": "splitathon-dave",
-		"gf": "gf"
+		"gf": "gf",
+		"dad": "splitathon-dave"
 	},
-	"boyfriend": [
-		910,
-		200
-	],
-	"stageUI": "",
+	"preload": {
+		"images/stage_light": 2,
+		"images/stagecurtains": 2,
+		"images/stagefront": 3,
+		"images/stageback": 3
+	},
 	"girlfriend": [
 		400,
 		130
 	],
+	"stageUI": "",
+	"boyfriend": [
+		910,
+		200
+	],
+	"defaultZoom": 0.7,
 	"objects": [
 		{
 			"x": -736,
@@ -179,28 +180,6 @@
 			"type": "sprite"
 		},
 		{
-			"x": 1284,
-			"y": 625,
-			"scale": [
-				1,
-				1
-			],
-			"image": "farm/picnic_towel_thing",
-			"flipX": false,
-			"filters": 3,
-			"color": "FFFFFF",
-			"angle": 0,
-			"name": "sprite10",
-			"antialiasing": true,
-			"flipY": false,
-			"scroll": [
-				1,
-				1
-			],
-			"alpha": 1,
-			"type": "sprite"
-		},
-		{
 			"x": 1118,
 			"y": 531,
 			"scale": [
@@ -223,183 +202,10 @@
 			"type": "sprite"
 		},
 		{
-			"x": -324,
-			"y": 323,
-			"scale": [
-				1,
-				1
-			],
-			"image": "characters/Splitathon_Dave",
-			"flipX": false,
-			"filters": 3,
-			"color": "FFFFFF",
-			"angle": 0,
-			"name": "dave",
-			"firstAnimation": "bruh",
-			"antialiasing": true,
-			"flipY": false,
-			"scroll": [
-				1,
-				1
-			],
-			"alpha": 0,
-			"animations": [
-				{
-					"offsets": [
-						-17,
-						0
-					],
-					"loop": true,
-					"fps": 24,
-					"anim": "bruh",
-					"indices": [],
-					"name": "bruh"
-				},
-				{
-					"offsets": null,
-					"loop": true,
-					"fps": 24,
-					"anim": "happy",
-					"indices": [],
-					"name": "happy"
-				},
-				{
-					"offsets": null,
-					"loop": true,
-					"fps": 24,
-					"anim": "idle",
-					"indices": [],
-					"name": "idle"
-				}
-			],
-			"type": "animatedSprite"
-		},
-		{
-			"x": -313,
-			"y": 553,
-			"scale": [
-				1,
-				1
-			],
-			"image": "characters/Splitathon_Bambi",
-			"flipX": false,
-			"filters": 3,
-			"color": "FFFFFF",
-			"angle": 0,
-			"name": "bambi",
-			"firstAnimation": "um",
-			"antialiasing": true,
-			"flipY": false,
-			"scroll": [
-				1,
-				1
-			],
-			"alpha": 1,
-			"animations": [
-				{
-					"offsets": null,
-					"loop": true,
-					"fps": 24,
-					"anim": "idle",
-					"indices": [],
-					"name": "splitathon idle"
-				},
-				{
-					"offsets": [
-						-32,
-						1
-					],
-					"loop": true,
-					"fps": 24,
-					"anim": "um",
-					"indices": [],
-					"name": "splitathon um"
-				},
-				{
-					"offsets": [
-						-29,
-						7
-					],
-					"loop": true,
-					"fps": 24,
-					"anim": "corn",
-					"indices": [],
-					"name": "splitathon corn"
-				}
-			],
-			"type": "animatedSprite"
-		},
-		{
 			"type": "gf"
 		},
 		{
 			"type": "dad"
-		},
-		{
-			"x": 1326,
-			"y": 305,
-			"scale": [
-				1,
-				1
-			],
-			"image": "characters/Splitathon_Dave",
-			"flipX": true,
-			"filters": 3,
-			"color": "FFFFFF",
-			"angle": 0,
-			"name": "dave2",
-			"firstAnimation": "happy",
-			"antialiasing": true,
-			"flipY": false,
-			"scroll": [
-				1,
-				1
-			],
-			"alpha": 0,
-			"animations": [
-				{
-					"offsets": null,
-					"indices": [],
-					"fps": 24,
-					"anim": "happy",
-					"loop": true,
-					"name": "happy"
-				}
-			],
-			"type": "animatedSprite"
-		},
-		{
-			"x": 1399,
-			"y": 480,
-			"scale": [
-				0.8,
-				0.8
-			],
-			"image": "bedroom/TristanSitting",
-			"flipX": false,
-			"filters": 3,
-			"color": "FFFFFF",
-			"angle": 0,
-			"name": "tristan",
-			"firstAnimation": "idle",
-			"antialiasing": true,
-			"flipY": false,
-			"scroll": [
-				1,
-				1
-			],
-			"alpha": 1,
-			"animations": [
-				{
-					"offsets": null,
-					"loop": true,
-					"fps": 24,
-					"anim": "idle",
-					"indices": [],
-					"name": "daytime"
-				}
-			],
-			"type": "animatedSprite"
 		},
 		{
 			"type": "boyfriend"
@@ -445,16 +251,15 @@
 		0,
 		0
 	],
-	"defaultZoom": 0.7,
+	"camera_speed": 1,
+	"directory": "",
 	"opponent": [
 		80,
 		195
 	],
-	"directory": "",
-	"camera_speed": 1,
-	"hide_girlfriend": false,
 	"camera_opponent": [
 		150,
 		0
-	]
+	],
+	"hide_girlfriend": false
 }

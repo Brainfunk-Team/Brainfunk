@@ -49,7 +49,7 @@ class Backyard extends BaseStage
     {
         // Character positions
         if (boyfriend != null) boyfriend.setPosition(830, 120);
-        if (gf != null) gf.setPosition(400, 130);
+        if (gf != null) gf.setPosition(400, -170);
         if (dad != null) dad.setPosition(100, 0);
     }
 }

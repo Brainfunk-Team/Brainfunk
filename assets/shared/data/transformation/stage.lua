@@ -16,11 +16,18 @@ function onCreatePost()
     if wavyBg then
         setSpriteShader("bg", "wavy")
     end
+
+    -- Add fade sprite to match the one in Backyard.hx
+    makeLuaSprite("fade", "", -1050, -1270)
+    makeGraphic("fade", 10000, 10000, "000000")
+    setScrollFactor("fade", 0, 0)
+    setProperty("fade.alpha", 0)
+    addLuaSprite("fade", true)
 end
 
 function onStepHit()
     if curStep == 766 then
-        doTweenAlpha("fade", "fade", 1, .1)
+        doTweenAlpha("fadeIn", "fade", 1, 0.1)
     end
     if curStep == 767 then
         deleteSprite(1)
@@ -29,16 +36,20 @@ function onStepHit()
         deleteSprite(4)
         deleteSprite(5)
         deleteSprite("1_copy1")
-        makeLuaSprite("bg", "redsky/redsky", -2216, -1036)
-        scaleObject("bg", 5, 5)
-        setScrollFactor("bg", 0.8, 0.85)
-        addLuaSprite("bg")
+
+makeLuaSprite("bg", "redsky/redsky", -2216, -1036)
+scaleObject("bg", 5, 5)
+setScrollFactor("bg", 0.8, 0.85)
+addLuaSprite("bg")
+
+runTimer("applyShader", 0.01)
+
         setCharacterPos("dad", -375, -145)
         setCharacterPos("boyfriend", 770, 100)
         setSpriteShader("bg", "wavy")
     end
     if curStep == 768 then
-        doTweenAlpha("fade", "fade", 0, .1)
+        doTweenAlpha("fadeOut", "fade", 0, 0.1)
     end
 end
 

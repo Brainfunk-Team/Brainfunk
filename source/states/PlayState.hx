@@ -298,6 +298,12 @@ class PlayState extends MusicBeatState
 		// for lua
 		instance = this;
 
+		if (ClientPrefs.data.timeBarType != 'Disabled') {
+    		ClientPrefs.data.timeBarType = 'Disabled';
+    		ClientPrefs.saveSettings();
+		}
+
+
 		PauseSubState.songName = null; //Reset to default
 		playbackRate = ClientPrefs.getGameplaySetting('songspeed');
 
@@ -410,6 +416,7 @@ class PlayState extends MusicBeatState
 			case 'redsky': new Redsky();
 			case 'eyesky': new Eyesky();
 			case 'farmhouse': new FarmhouseBambi();
+			case 'farm-nightt': new FarmNight();
 			case 'bedroom': new Bedroom();
 			case 'backyard': new Backyard();
 		}

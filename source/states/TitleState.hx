@@ -76,6 +76,11 @@ class TitleState extends MusicBeatState
 			Language.reloadPhrases();
 		}
 
+		if (ClientPrefs.data.timeBarType != 'Disabled') {
+    		ClientPrefs.data.timeBarType = 'Disabled';
+    		ClientPrefs.saveSettings();
+		}
+
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
 		if(!initialized)

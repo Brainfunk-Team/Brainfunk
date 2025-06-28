@@ -26,6 +26,20 @@ class FPSCounter extends TextField
     @:noCompletion private var AVFPS:Array<Int>;
     @:noCompletion private var times:Array<Float>;
 
+    // FPSType modes: 'Disabled', 'Enabled', 'Enabled + Memory', 'Enabled + Extra'
+    private var _FPSType:String = "Enabled";
+    public var FPSType(get, set):String;
+
+    function get_FPSType():String
+        return _FPSType;
+
+    function set_FPSType(value:String):String
+    {
+        _FPSType = value;
+        updateText(); // Immediately refresh display
+        return value;
+    }
+
     public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
     {
         super();
@@ -87,20 +101,41 @@ class FPSCounter extends TextField
     }
 
     public dynamic function updateText():Void
+{
+    var mode:String = ClientPrefs.data.timeBarType;
+
+    if (mode == "Disabled")
     {
-        if (memoryMegas > maxMemory)
-            maxMemory = memoryMegas;
-
-        text = 'FPS: ${currentFPS}/${maxFPS}'
-            + '\nRaw Frame Time: ${Math.fround(frameTime * 100) / 100} ms'
-            + '\nAverage FPS: ${Math.fround(averageFPS * 100) / 100}'
-            + '\nMin FPS: ${minFPS} | Max FPS: ${maxFPS}'
-            + '\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}/${flixel.util.FlxStringUtil.formatBytes(maxMemory)}';
-
-        textColor = 0xFFFFFFFF;
-        if (currentFPS < FlxG.drawFramerate * 0.5)
-            textColor = 0xFFFF0000;
+        visible = false;
+        return;
     }
+
+    visible = true;
+
+    if (memoryMegas > maxMemory)
+        maxMemory = memoryMegas;
+
+    var output = 'FPS: ${currentFPS}/${maxFPS}';
+
+    if (mode == "Enabled + Extra")
+    {
+        output += '\nRaw Frame Time: ${Math.fround(frameTime * 100) / 100} ms';
+        output += '\nAverage FPS: ${Math.fround(averageFPS * 100) / 100}';
+        output += '\nMin FPS: ${minFPS} | Max FPS: ${maxFPS}';
+    }
+
+    if (mode == "Enabled + Memory" || mode == "Enabled + Extra")
+    {
+        output += '\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}/${flixel.util.FlxStringUtil.formatBytes(maxMemory)}';
+    }
+
+    text = output;
+
+    textColor = 0xFFFFFFFF;
+    if (currentFPS < FlxG.drawFramerate * 0.5)
+        textColor = 0xFFFF0000;
+}
+
 
     inline function get_memoryMegas():Float
         return cpp.vm.Gc.memInfo64(cpp.vm.Gc.MEM_INFO_USAGE);
