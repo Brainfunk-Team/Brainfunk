@@ -19,7 +19,9 @@ import backend.Paths;
 
 class MidsongEditorState extends MusicBeatState implements PsychUIEvent
 {
-    var tip:Array<String> = ["Press Shift to select an event.","Press Escape to exit."];
+    var tip:String =    "Press Shift to select an event.\n" +
+                        "Press Escape to exit."
+    var tipText:FlxText;
     var emptyString:String = "(Empty!)";
     var text:Array<String> = [""];
     var stepStart:Array<Int> = [0];
@@ -62,10 +64,14 @@ class MidsongEditorState extends MusicBeatState implements PsychUIEvent
         newEventButton   = new PsychUIButton(FlxG.width-300, FlxG.height-160, "New Event", null, 80, 24);
 
         currentText = new FlxText(0, 0, FlxG.width, emptyString);
-        currentText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, "center");
+        currentText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.RED, "center");
         currentText.screenCenter(XY);
-        currentText.color = FlxColor.RED;
 
+        tipText = new FlxText(0, 0, FlxG.width, tip);
+        tipText.x = 0
+        tipText.y = FlxG.Height
+        tipText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.RED, "left");
+    
         playhead = new FlxSprite(FlxG.width/2, FlxG.height-128);
         playhead.loadGraphic(Paths.getSharedPath("images/editors/playhead.png"));
 
