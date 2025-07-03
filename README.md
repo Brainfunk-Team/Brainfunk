@@ -1,7 +1,11 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/Brainfunk-Team/BrainyEngine)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Brainfunk-Team/BrainyEngine)
+
+
 <p align="center">
   <img width="450" src="https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1">
 </p>
-
+  
 # BrainyEngine
 
 ***THIS GAME IS STILL IN ACTIVE DEVELOPMENT, BUGS WILL OCCUR.***
