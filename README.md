@@ -33,7 +33,7 @@ Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), 
 * SKiD03 - Composer
 * Fluffen - Composer
 * mint - 3D artist
-* [OfficialGamer](https://github.com/Official3Gamer) - Contributor
+* [OfficialGamer](https://github.com/Official3Gamer) - Contributor and Windows and linux Builder
 
 ### Psych Engine Credits
 * Shadow Mario - Main Programmer and Head of Psych Engine.
