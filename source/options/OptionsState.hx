@@ -13,7 +13,6 @@ class OptionsState extends MusicBeatState
 		'Graphics',
 		'Misc',
 		'Gameplay' //,
-		//'Brainfunk Settings' //, //AHH THIS A WIP DON'T LOOK AT ME!!!!!
 		//if TRANSLATIONS_ALLOWED, 'Language' #end
 	];
 	private var grpOptions:FlxTypedGroup<Alphabet>;

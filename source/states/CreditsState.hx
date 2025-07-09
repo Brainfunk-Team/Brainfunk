@@ -41,7 +41,7 @@ class CreditsState extends MusicBeatState
 			["Brainfunk Team"],
 			["Brainy7890", "brainy7890", "Director of Brainfunk, also composed and programmed.", "https://github.com/Brainy0789/BrainyEngine", "ffc051"],
 			["SKiD03", "skid03", "Composer", "https://www.youtube.com/channel/UC0M_2RT49Y-IonHcyPdcNVw", "fff700"],
-			["Fluffen", "fluffen", "Composer", "https://www.bandlab.com/fluffy_fluffen_uwu", "ffc051"], //Due to lack of icon, this is getting commented out.
+			["Fluffen", "fluffen", "Composer", "https://www.bandlab.com/fluffy_fluffen_uwu", "ffc051"],
 			["OfficialGamer", "official", "Dev Team (Builder, Helper and Tester)", "https://officialgamer.nekoweb.org", "fca103"],
 			[""],
 			["Special Thanks"],

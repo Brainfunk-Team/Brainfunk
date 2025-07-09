@@ -10,12 +10,14 @@ import states.StoryMenuState;
 import states.FreeplayState;
 import options.OptionsState;
 
+import options.GameplayChangersSubstate;
+
 class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
 	var menuItems:Array<String> = [];
-	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Options', "Kill Yourself", 'Exit to menu'];
+	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Options', 'Exit to menu', "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Kill Yourself"];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
@@ -334,6 +336,8 @@ class PauseSubState extends MusicBeatSubstate
 				case "Kill Yourself":
 					PlayState.instance.health = 0;
 					close();
+				case "Gameplay Modifiers":
+					MusicBeatState.switchState(new GameplayChangersSubstate());
 			}
 		}
 	}

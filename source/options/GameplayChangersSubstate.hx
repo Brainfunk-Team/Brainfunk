@@ -5,6 +5,10 @@ import objects.CheckboxThingie;
 
 import options.Option.OptionType;
 
+import states.PlayState;
+import backend.MusicBeatState;
+import substates.PauseSubState;
+import flixel.FlxSubState;
 class GameplayChangersSubstate extends MusicBeatSubstate
 {
 	private var curSelected:Int = 0;
@@ -85,10 +89,13 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 	public function new()
 	{
 		super();
-		
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		bg.alpha = 0.6;
-		add(bg);
+
+		if (PlayState.SONG != null)
+		{
+			var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+			bg.alpha = 0.6;
+			add(bg);
+		}
 
 		// avoids lagspikes while scrolling through menus!
 		grpOptions = new FlxTypedGroup<Alphabet>();
@@ -152,7 +159,14 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 
 		if (controls.BACK)
 		{
-			close();
+			if (PlayState.SONG != null)
+			{
+				//unused for now
+			}
+			else {
+				close();
+			}
+			
 			ClientPrefs.saveSettings();
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 		}

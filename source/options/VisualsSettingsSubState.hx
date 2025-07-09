@@ -14,7 +14,7 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 	public function new()
 	{
 		title = Language.getPhrase('visuals_menu', 'Visuals Settings');
-		rpcTitle = 'Visuals Settings Menu'; //for Discord Rich Presence
+		rpcTitle = 'Misc Settings Menu'; //for Discord Rich Presence
 
 		// for note skins and splash skins
 		notes = new FlxTypedGroup<StrumNote>();
@@ -89,12 +89,12 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 			"What should the Time Bar display?",
 			'timeBarType',
 			STRING,
-			['Disabled']);
+			['Time Left', 'Time Elapsed', 'Song Name', 'Time Left + Song Name', 'Time Elapsed + Song Name', 'Disabled']);
 		addOption(option);
 
 		var option:Option = new Option('FPS Bar:',
 			"What should the FPS Bar display?",
-			'timeBarType',
+			'showFPS',
 			STRING,
 			['Disabled', 'Enabled', 'Enabled + Memory', 'Enabled + Extra']);
 		addOption(option);
@@ -127,15 +127,6 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 		option.changeValue = 0.1;
 		option.decimals = 1;
 		addOption(option);
-		
-		#if !mobile
-		var option:Option = new Option('FPS Counter',
-			'If unchecked, hides FPS Counter.',
-			'showFPS',
-			BOOL);
-		addOption(option);
-		option.onChange = onChangeFPSCounter;
-		#end
 		
 		var option:Option = new Option('Pause Music:',
 			"What song do you prefer for the Pause Screen?",
@@ -297,8 +288,12 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 	#if !mobile
 	function onChangeFPSCounter()
 	{
+		if (ClientPrefs.data.showFPS == 'Disabled')
+			ClientPrefs.data.fpsShown = false;
+		else
+			ClientPrefs.data.fpsShown = true;
 		if(Main.fpsVar != null)
-			Main.fpsVar.visible = ClientPrefs.data.showFPS;
+			Main.fpsVar.visible = ClientPrefs.data.fpsShown;
 	}
 	#end
 }

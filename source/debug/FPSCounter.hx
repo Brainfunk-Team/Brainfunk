@@ -102,8 +102,8 @@ class FPSCounter extends TextField
 
     public dynamic function updateText():Void
 {
-    var mode:String = ClientPrefs.data.timeBarType;
-
+    var mode:String = ClientPrefs.data.showFPS;
+    //var mode:String = "Enabled + Extra";
     if (mode == "Disabled")
     {
         visible = false;

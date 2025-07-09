@@ -8,10 +8,11 @@ import states.TitleState;
 
 // Add a variable here and it will get automatically saved
 @:structInit class SaveVariables {
+	public var fpsShown:Bool = true;
 	public var downScroll:Bool = false;
 	public var middleScroll:Bool = false;
 	public var opponentStrums:Bool = true;
-	public var showFPS:Bool = true;
+	public var showFPS:String = 'Enabled';
 	public var flashing:Bool = true;
 	public var autoPause:Bool = true;
 	public var antialiasing:Bool = true;
@@ -37,7 +38,7 @@ import states.TitleState;
 		[0xFFFF884E, 0xFFFFFAF5, 0xFF6C0000]];
 
 	public var ghostTapping:Bool = true;
-	public var timeBarType:String = 'Disabled';
+	public var timeBarType:String = 'Time Left';
 	public var FPSType:Array<String> = ['Enabled', 'Enabled + Memory', 'Enabled + Extra'];
 	public var scoreZoom:Bool = true;
 	public var noReset:Bool = false;
@@ -178,8 +179,11 @@ class ClientPrefs {
 			if (key != 'gameplaySettings' && Reflect.hasField(FlxG.save.data, key))
 				Reflect.setField(data, key, Reflect.field(FlxG.save.data, key));
 		
+		if (data.showFPS == "Disabled")
+			data.fpsShown = false;
+
 		if(Main.fpsVar != null)
-			Main.fpsVar.visible = data.showFPS;
+			Main.fpsVar.visible = data.fpsShown;
 
 		#if (!html5 && !switch)
 		FlxG.autoPause = ClientPrefs.data.autoPause;
