@@ -1,5 +1,7 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/Brainfunk-Team/BrainyEngine)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Brainfunk-Team/BrainyEngine)
+![GitHub repo size](https://img.shields.io/github/repo-size/Brainfunk-Team/Brainfunk)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Brainfunk-Team/Brainfunk)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brainfunk-Team/Brainfunk/total)
+
 
 
 <p align="center">
