@@ -2,8 +2,6 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Brainfunk-Team/Brainfunk)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brainfunk-Team/Brainfunk/total)
 
-### NOTE: THIS REPO IS OUTDATED: AN UPDATED REPO IS [HERE](https://github.com/Brainfunk-Team/BrainfunkRestored)
-
 <p align="center">
   <img width="450" src="https://github.com/user-attachments/assets/a1f236ec-9fdb-4b89-a0de-68d75ff170d1">
 </p>
